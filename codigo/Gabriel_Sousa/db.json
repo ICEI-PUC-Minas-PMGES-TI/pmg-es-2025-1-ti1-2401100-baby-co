@@ -1,0 +1,30 @@
+{
+  "servicos": [
+    {
+      "titulo": "Sono",
+      "descricao": "Acompanhe os horários e duração do sono. Des...ões e melhore a rotina do seu bebê com análises personalizadas."
+    },
+    {
+      "titulo": "Alimentação",
+      "descricao": "Registre amamentações, fórmulas e introdução...e históricos, padrões e gere relatórios para consultas médicas."
+    },
+    {
+      "titulo": "Compartilhamento",
+      "descricao": "Compartilhe informações com outros cuidadores, babás ou familiares para manter todos informados."
+    },
+    {
+      "titulo": "Lembretes",
+      "descricao": "Configure alertas para medicações, consultas médicas e outras atividades importantes para o seu bebê."
+    }
+  ],
+  "depoimentos": [
+    {
+      "texto": "O Baby Connect mudou minha vida como mãe de prim...ades do meu bebê e ainda compartilhar com meu marido e a babá.",
+      "imagem": "usuario1.png"
+    },
+    {
+      "texto": "Como mãe solo, este app me ajuda a manter a sani...s de sono, alimentação e planejar melhor meu dia com meu bebê.",
+      "imagem": "usuario2.png"
+    }
+  ]
+}
