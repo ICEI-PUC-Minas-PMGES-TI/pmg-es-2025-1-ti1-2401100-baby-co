@@ -1,7 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   const data = {
     logo: 'logo.jpg',
-    menu: ['Bebês', 'Nutrição', 'Blogs', 'Lembretes'],
+    menu:
+      [
+        {
+          acMenu: 'Bebês',
+          link: 'codigo\Andre\html\index.html'
+        }, {
+          acMenu: 'Nutrição',
+          link: ''
+        }, {
+          acMenu: 'Blogs',
+          link: 'codigo\Vinicius\artigos.html'
+        }, {
+          acMenu: 'Lembretes',
+          link: 'codigo\Ruan\html\index.html'
+        }
+      ],
     banner: {
       titulo: 'BabyConnect: Conectando você ao cuidado, do primeiro choro ao primeiro passo!',
       botaoTexto: 'Saiba Mais',
@@ -17,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     data.menu.forEach(item => {
       const li = document.createElement('li');
       const a = document.createElement('a');
-      a.textContent = item;
-      a.href = '#';
+      a.textContent = item.acMenu;
+      a.href = item.link;
       li.appendChild(a);
       menuList.appendChild(li);
     });
