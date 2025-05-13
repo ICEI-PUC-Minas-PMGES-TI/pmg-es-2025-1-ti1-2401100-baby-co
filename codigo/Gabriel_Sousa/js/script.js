@@ -5,16 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
       [
         {
           acMenu: 'Bebês',
-          link: 'codigo\Andre\html\index.html'
+          link: 'codigo/Andre/html/index.html'
         }, {
           acMenu: 'Nutrição',
           link: ''
         }, {
           acMenu: 'Blogs',
-          link: 'codigo\Vinicius\artigos.html'
+          link: 'codigo/Vinicius/artigos.html'
         }, {
           acMenu: 'Lembretes',
-          link: 'codigo\Ruan\html\index.html'
+          link: 'codigo/Ruan/html/index.html'
         }
       ],
     banner: {
