@@ -5,43 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
-     <header>
-        <img src="" alt="Logo">
+    <header>
+        <img src="../../../Images/logo.png" alt="Logo">
         <ul>
             <li>Inicio</li>
             <li>Nutrição</li>
             <li>Blogs</li>
         </ul>
         <ul>
-            <li>icon</li>
-            <li>icon</li>
+            <li><i class="fas fa-baby"></i></li>
+       <li>
+  <label class="switch">
+    <input type="checkbox" id="darkModeToggle">
+    <span class="slider round"></span>
+  </label>
+</li>
+
         </ul>
     </header>
-    
+
     <nav>
         <p>Checklist de <span id="nomeUsuario">Pedro</span></p>
         <p class="txt">Leve tudo o que importa para um dia perfeito!</p>
     </nav>
-    
+
     <div class="container-checklist">
         <div class="lista-titulo">Lista de itens:</div>
-        
+
         <div id="listaItens">
-            <!-- Itens do checklist serão inseridos aqui pelo JavaScript -->
+
         </div>
-        
+
         <button type="button" class="adicionar-btn" id="botaoAdicionar">Adicionar item</button>
-        
+
         <div class="form-container" id="formContainer">
             <div class="form-titulo" id="formTitulo">Adicionar novo item</div>
-            
+
             <div class="form-group">
                 <label for="itemTexto" class="form-label">Nome do item:</label>
                 <input type="text" id="itemTexto" class="form-input" placeholder="Digite o nome do item">
             </div>
-            
+
             <div class="form-actions">
                 <button type="button" class="salvar-btn" id="botaoSalvar">Salvar</button>
                 <button type="button" class="cancelar-btn" id="botaoCancelar">Cancelar</button>
@@ -49,6 +57,6 @@
         </div>
     </div>
 
-<script src="../js//app.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 </html>
