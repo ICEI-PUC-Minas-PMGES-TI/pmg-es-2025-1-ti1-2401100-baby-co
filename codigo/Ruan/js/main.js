@@ -131,11 +131,19 @@ async function carregarLembretes() {
 }
 
 function aplicarFiltros(lembretes) {
-    const categoriasMarcadas = Array.from(document.querySelectorAll('.filters h2:nth-of-type(1) + .checkbox-group input[type="checkbox"]:checked'))
-        .map(cb => cb.parentElement.textContent.trim());
+    const categoriasMarcadas = Array.from(
+        document.querySelectorAll('.filters h2:nth-of-type(1) + .checkbox-group input[type="checkbox"]:checked')
+    ).map(cb => cb.parentElement.textContent.trim());
 
-    const statusMarcados = Array.from(document.querySelectorAll('.filters h2:nth-of-type(2) + .checkbox-group input[type="checkbox"]:checked'))
-        .map(cb => cb.parentElement.textContent.trim().toLowerCase());
+    const statusMarcados = Array.from(
+        document.querySelectorAll('.filters h2:nth-of-type(2) + .checkbox-group input[type="checkbox"]:checked')
+    ).map(cb => {
+        const texto = cb.parentElement.textContent.trim().toLowerCase();
+        if (texto === "ativos") return "ativo";
+        if (texto === "completados") return "finalizado";
+        // Adapte conforme necessidade
+        return texto;
+    });
 
     list.innerHTML = "";
 
@@ -150,6 +158,7 @@ function aplicarFiltros(lembretes) {
 
 
 
+
 document.querySelectorAll('.filters input[type="checkbox"]').forEach(cb => {
     cb.addEventListener('change', carregarLembretes);
 });
@@ -158,3 +167,11 @@ document.querySelectorAll('.filters input[type="checkbox"]').forEach(cb => {
 
 
 window.addEventListener('DOMContentLoaded', carregarLembretes);
+
+
+const toggle = document.getElementById('darkModeToggle');
+
+
+  toggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode');
+  });

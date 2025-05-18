@@ -31,22 +31,38 @@
 
     
     <script>
-        document.getElementById("formPais").addEventListener("submit", function(event) {
-            event.preventDefault();
+    const URL_BASE = "http://localhost:3000/";
 
-            const dados = {
-                mae: document.getElementById("mae").value,
-                nascimento_mae: document.getElementById("nascimento_mae").value,
-                pai: document.getElementById("pai").value,
-                nascimento_pai: document.getElementById("nascimento_pai").value
-            };
+    document.getElementById("formPais").addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const dados = {
+            mae: document.getElementById("mae").value,
+            nascimento_mae: document.getElementById("nascimento_mae").value,
+            pai: document.getElementById("pai").value,
+            nascimento_pai: document.getElementById("nascimento_pai").value
+        };
+        try {
+            const res = await fetch(`${URL_BASE}pais`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dados)
+            });
 
-            
-            console.log("Dados cadastrados em JSON:");
-            console.log(JSON.stringify(dados, null, 4));
+            if (!res.ok) throw new Error("Erro ao salvar dados no servidor");
 
-            alert("Dados cadastrados com sucesso!");
-        });
-    </script>
+            const resultado = await res.json();
+            console.log("Pai/mãe cadastrados:", resultado);
+
+            alert("Cadastro salvo com sucesso!");
+            this.reset(); 
+        } catch (err) {
+            console.error("Erro:", err);
+            alert("Falha ao salvar os dados. Verifique o console.");
+        }
+    });
+</script>
+
 </body>
 </html>
