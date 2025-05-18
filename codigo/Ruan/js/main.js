@@ -141,7 +141,6 @@ function aplicarFiltros(lembretes) {
         const texto = cb.parentElement.textContent.trim().toLowerCase();
         if (texto === "ativos") return "ativo";
         if (texto === "completados") return "finalizado";
-        // Adapte conforme necessidade
         return texto;
     });
 
@@ -174,4 +173,4 @@ const toggle = document.getElementById('darkModeToggle');
 
   toggle.addEventListener('change', () => {
     document.body.classList.toggle('dark-mode');
-  });
+  });  
