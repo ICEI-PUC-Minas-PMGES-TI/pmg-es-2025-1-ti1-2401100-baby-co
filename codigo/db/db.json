@@ -51,5 +51,21 @@
       "status": "ativo",
       "id": 1
     }
+  ],
+  "pais": [
+    {
+      "mae": "mae",
+      "nascimento_mae": "2025-05-06",
+      "pai": "pai",
+      "nascimento_pai": "2025-05-21",
+      "id": 1
+    },
+    {
+      "mae": "Monica",
+      "nascimento_mae": "2025-05-01",
+      "pai": "Marcelo",
+      "nascimento_pai": "2025-05-01",
+      "id": 2
+    }
   ]
 }
