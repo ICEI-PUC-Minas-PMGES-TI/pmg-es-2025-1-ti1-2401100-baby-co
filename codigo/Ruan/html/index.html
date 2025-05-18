@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Lembretes</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header id="cabecalho">
+    <div id="container">
+        <div>
+            <img id="logo" src="/codigo/public/assets/images/Logo (3).png" alt="Logo">
+        </div>
+        <nav id="menu">
+            <div class="menu-center">
+                <a>Início</a>
+                <a>Nutrição</a>
+                <a>Blogs</a>
+            </div>
+            <div class="menu-right">
+                <a href="">Pesquisa</a>
+                <a href="">Perfil</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <div class="layout">
+        <aside class="filters">
+            <h2>Categorias</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Medicamentos</label>
+                <label><input type="checkbox"> Consultas</label>
+                <label><input type="checkbox"> Vacinas</label>
+                <label><input type="checkbox"> Outros</label>
+            </div>
+
+            <h2>Status</h2>
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Ativos</label>
+                <label><input type="checkbox"> Completados</label>
+                <label><input type="checkbox"> Próximos</label>
+                <label><input type="checkbox"> Outros</label>
+            </div>
+
+            <div class="date-filter">
+                <label>De: <input type="text" placeholder="DD/MM/AAAA"></label>
+                <label>Até: <input type="text" placeholder="DD/MM/AAAA"></label>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <form id="lembreteForm">
+                <div class="form-group">
+                    <label>Título:</label>
+                    <input type="text" autocomplete="off" id="titulo" required>
+                </div>
+                <div class="form-group">
+                    <label>Categoria:</label>
+                    <select id="categoria" required>
+                        <option value="Vacinas">Vacinas</option>
+                        <option value="Medicamentos">Medicamentos</option>
+                        <option value="Consultas">Consultas</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Descrição:</label>
+                    <input type="text" autocomplete="off" id="descricao">
+                </div>
+                <div class="form-group">
+                    <label>Data:</label>
+                    <input type="text" id="data" autocomplete="off" placeholder="DD/MM/AAAA" required>
+                </div>
+                <button type="submit">Criar Lembrete</button>
+            </form>
+
+            <ul id="lembreteList"></ul>
+        </main>
+       
+    </div>
+    
+    <footer>
+      <div class="footer-content">
+          <p>&copy; 2023 Todos os direitos reservados</p>
+      </div>
+  </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>

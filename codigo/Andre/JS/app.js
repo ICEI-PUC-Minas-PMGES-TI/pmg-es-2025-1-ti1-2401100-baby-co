@@ -38,12 +38,22 @@ document.getElementById("form").addEventListener("submit", function (e) {
     sangue
   };
 
-  const cadastros = JSON.parse(localStorage.getItem("cadastros")) || [];
-  cadastros.push(novoCadastro);
-  localStorage.setItem("cadastros", JSON.stringify(cadastros));
-
-  alert("Perfil salvo com sucesso!");
-  e.target.reset();
+  fetch("http://localhost:5000/bebes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(novoCadastro)
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      alert("Bebê cadastrado com sucesso!");
+      e.target.reset();
+    })
+    .catch((error) => {
+      console.error("Erro ao cadastrar bebê:", error);
+      alert("Houve um erro ao cadastrar o bebê. Tente novamente.");
+    });
 });
 
 document.getElementById("nascimento").addEventListener("input", function (e) {

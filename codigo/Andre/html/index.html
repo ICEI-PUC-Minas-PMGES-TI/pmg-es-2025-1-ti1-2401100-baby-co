@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <title>Baby Connect</title>
+
+
 </head>
 <body>
     <header id="cabecalho">
@@ -18,9 +20,12 @@
             <img id="logo" src="../.././public/assets/images/Logo (3).png" alt="Logo">
           </div>
           <nav id="menu">
-            <a >Início</a>
-            <a >Nutrição</a>
-            <a >Blogs</a>
+            <div id="textos">
+              <a href="">Bebês</a>
+            <a href="">Nutrição</a>
+            <a href="">Blogs</a>
+            </div>
+            
           </nav>
         </div>
       </header>
@@ -31,14 +36,14 @@
     
         <form class="form" id="form">
           <fieldset class="card">
-            <label for="nome">Nome do bebê:</label>
+            <label for="nome"><span class="asterisco">*</span>Nome do bebê:</label>
             <input type="text" id="nome" placeholder="">
     
-            <label for="nascimento">Data de nascimento:</label>
+            <label for="nascimento"><span class="asterisco">*</span>Data de nascimento:</label>
             <input type="text" id="nascimento" placeholder="DD/MM/AAAA">
     
             <div id="sexo">
-              <span>Sexo:</span>
+              <span><span class="asterisco">*</span>Sexo:</span>
               <label><input type="radio" name="sexo" value="masculino"> Masculino</label>
               <label><input type="radio" name="sexo" value="feminino"> Feminino</label>
             </div>
@@ -47,13 +52,13 @@
           <fieldset class="card">
             <h2>Dados de nascimento</h2>
     
-            <label for="peso">Peso</label>
+            <label for="peso"><span class="asterisco">*</span>Peso:</label>
             <input type="text" id="peso" placeholder="Ex: 10Kg">
     
-            <label for="altura">Altura</label>
+            <label for="altura"><span class="asterisco">*</span>Altura:</label>
             <input type="text" id="altura" placeholder="Ex: 50cm">
     
-            <label for="sangue">Tipo sanguíneo</label>
+            <label for="sangue"><span class="asterisco">*</span>Tipo sanguíneo:</label>
             <select id="sangue">
               <option value="">Selecione</option>
               <option value="A+">A+</option>
@@ -71,7 +76,6 @@
           <a class="link-btn">Ver bebês cadastrados</a>
         </form>
       </main>
-
 
       <script src="../JS/app.js"></script>
 

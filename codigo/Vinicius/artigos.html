@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>blog-noticias</title>
+  <link rel="stylesheet" href="css/artigos.css">
+</head>
+<body>
+  <main class="container">
+    <section class="posts">
+      <article class="post">
+        <img src="imagens/familia.jpg" alt="Família" >
+        <p>placeholder</p>
+        <a href="post1.html" class="btn">Ler mais</a>
+      </article>
+      <article class="post">
+        <img src="imagens/Bebe.jpg" alt="Bebe" >
+        <p>placeholder</p>
+        <a href="post2.html" class="btn">Ler mais</a>
+      </article>
+    </section>
+
+    <aside class="sidebar">
+      <section class="filter">
+        <h3>Categorias</h3>
+        <label><input type="checkbox"> Dicas</label><br>
+        <label><input type="checkbox"> Consultas</label><br>
+        <label><input type="checkbox"> Novidades</label><br>
+       
+        <h3>Para</h3>
+        <label><input type="checkbox"> Mães</label><br>
+        <label><input type="checkbox"> Pais</label><br>
+        <label><input type="checkbox"> Recem nascidos</label><br>
+
+        <p>De:<br><input type="date"></p>
+        <p>Até:<br><input type="date"></p>
+      </section>
+
+      <section class="recent-posts">
+        <h3>Posts Recentes</h3>
+        <ul>
+          <li><strong>placeholder</strong><br>2 de Abril, 2025</li>
+          <li><strong>placeholder</strong><br>2 de Abril, 2025</li>
+          <li><strong>placeholder</strong><br>2 de Abril, 2025</li>
+          <li><strong>placeholder</strong><br>2 de Abril, 2025</li>
+        </ul>
+        <a href="criar-post.html" class="btn novo-post">Criar novo post</a>
+      </section>
+    </aside>
+  </main>
+  <script>
+  const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+  const postsContainer = document.querySelector('.posts');
+
+  savedPosts.forEach(post => {
+    const article = document.createElement('article');
+    article.classList.add('post');
+    article.innerHTML = `
+      <img src="${post.imagem}" alt="${post.titulo}">
+      <p>${post.conteudo}</p>
+      <a href="#" class="btn">Ler mais</a>
+    `;
+    postsContainer.appendChild(article);
+  });
+  </script>
+</body>
+</html>
