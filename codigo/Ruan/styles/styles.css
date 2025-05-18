@@ -58,6 +58,14 @@ input[type="text"], select {
   box-sizing: border-box;
   background-color: #F0F0F0;
 }
+input[type="date"], select {
+  padding: 10px;
+  border: 2px solid #004F44;
+  border-radius: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #F0F0F0;
+}
 
 button {
   padding: 12px;

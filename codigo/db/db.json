@@ -41,5 +41,15 @@
       "altura": "12",
       "sangue": "B+"
     }
+  ],
+  "lembretes": [
+    {
+      "titulo": "chat",
+      "categoria": "Vacinas",
+      "descricao": "chat",
+      "data": "2025-05-18",
+      "status": "ativo",
+      "id": 1
+    }
   ]
 }
