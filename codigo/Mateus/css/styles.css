@@ -35,7 +35,7 @@
             cursor: pointer;
         }
 
-        /* Hover moderno nos itens do menu (ul do meio) */
+      
         header ul:first-of-type li {
             position: relative;
             padding: 5px 0;
@@ -61,7 +61,7 @@
             width: 100%;
         }
 
-        /* Ícone de bebê */
+       
         header ul:last-of-type li i {
             font-size: 20px;
             color: white;
@@ -346,4 +346,59 @@ body.dark-mode .cancelar-btn {
   background-color: #444;
   color: white;
   border-color: #666;
+}
+.tag-selector {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag-btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  opacity: 0.6;
+}
+
+.tag-btn[data-tag="medico"] { background-color: #e74c3c; }
+.tag-btn[data-tag="alimentacao"] { background-color: #27ae60; }
+.tag-btn[data-tag="acessorios"] { background-color: #2980b9; }
+.tag-btn[data-tag="outros"] { background-color: #8e44ad; }
+
+.tag-btn.ativo {
+  opacity: 1;
+  outline: 2px solid white;
+}
+
+.item-tag {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.item-tag.medico { background-color: #e74c3c; }
+.item-tag.alimentacao { background-color: #27ae60; }
+.item-tag.acessorios { background-color: #2980b9; }
+.item-tag.outros { background-color: #8e44ad; }
+
+.filtro-tags {
+  display: flex;
+  gap: 10px;
+  margin: 20px auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.filtro-tags .tag-btn {
+  opacity: 1;
+}
+.filtro-tags .tag-btn.ativo {
+  border: 2px solid black;
 }

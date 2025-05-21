@@ -40,9 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    /**
-     * Salva os itens no localStorage
-     */
+
     function salvarNaStorage() {
         localStorage.setItem('checklistItens', JSON.stringify(itens));
     }
@@ -213,3 +211,5 @@ document.addEventListener('DOMContentLoaded', () => {
   toggle.addEventListener('change', () => {
     document.body.classList.toggle('dark-mode');
   });   
+  let tagSelecionada = null;
+    let filtroTagAtual = 'todos';
