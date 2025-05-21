@@ -402,3 +402,21 @@ body.dark-mode .cancelar-btn {
 .filtro-tags .tag-btn.ativo {
   border: 2px solid black;
 }
+.tag-btn.selecionado {
+    border: 2px solid #333;
+    background-color: #ddd;
+}
+
+.filtros {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 10px;
+}
+
+.filtros button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+}
