@@ -1,147 +1,170 @@
-const botaoAdicionar = document.getElementById("botaoAdicionar");
-const formContainer = document.getElementById("formContainer");
-const botaoCancelar = document.getElementById("botaoCancelar");
-const botaoSalvar = document.getElementById("botaoSalvar");
-const listaItens = document.getElementById("listaItens");
-const tagBotoes = document.querySelectorAll(".tag-btn");
+const lista = document.getElementById("lista");
 const inputItem = document.getElementById("inputItem");
-const darkModeToggle = document.getElementById("darkModeToggle");
-const body = document.body;
+const btnSalvar = document.getElementById("btnSalvar");
+const btnCancelar = document.getElementById("btnCancelar");
+const filtroTags = document.querySelectorAll("#filtros .tag-btn");
+const inputTags = document.querySelectorAll(".tag-selector .tag-btn");
+const toggleDarkMode = document.getElementById("darkModeToggle");
 
-let tagSelecionada = "";
-let itens = JSON.parse(localStorage.getItem("itensChecklist")) || [];
+let tarefas = carregarTarefas();
+let tagSelecionada = "todos";
+let tagInputSelecionada = null;
 let editandoIndex = null;
 
-function renderizarItens(filtro = "") {
-    listaItens.innerHTML = "";
+toggleDarkMode.addEventListener("change", () => {
+  document.body.classList.toggle("dark", toggleDarkMode.checked);
+  localStorage.setItem("modoEscuro", toggleDarkMode.checked);
+});
 
-    itens
-        .filter(item => !filtro || item.tag === filtro)
-        .forEach((item, index) => {
-            const div = document.createElement("div");
-            div.className = "item";
 
-            const span = document.createElement("span");
-            span.textContent = `${item.nome} (${item.tag})`;
-
-            const editarBtn = document.createElement("button");
-            editarBtn.textContent = "Editar";
-            editarBtn.onclick = () => editarItem(index);
-
-            const excluirBtn = document.createElement("button");
-            excluirBtn.textContent = "Excluir";
-            excluirBtn.onclick = () => excluirItem(index);
-
-            div.appendChild(span);
-            div.appendChild(editarBtn);
-            div.appendChild(excluirBtn);
-
-            listaItens.appendChild(div);
-        });
+if (localStorage.getItem("modoEscuro") === "true") {
+  toggleDarkMode.checked = true;
+  document.body.classList.add("dark");
 }
 
-function salvarItens() {
-    localStorage.setItem("itensChecklist", JSON.stringify(itens));
-}
 
-function limparFormulario() {
-    inputItem.value = "";
-    tagSelecionada = "";
-    tagBotoes.forEach(btn => btn.classList.remove("selecionado"));
+filtroTags.forEach(tag => {
+  tag.addEventListener("click", () => {
+    filtroTags.forEach(t => t.classList.remove("ativo"));
+    tag.classList.add("ativo");
+    tagSelecionada = tag.dataset.tag;
+    renderizar();
+  });
+});
+
+
+inputTags.forEach(tag => {
+  tag.addEventListener("click", () => {
+    inputTags.forEach(t => t.classList.remove("ativo"));
+    tag.classList.add("ativo");
+    tagInputSelecionada = tag.dataset.tag;
+  });
+});
+
+// Salvar tarefa (criar ou editar)
+btnSalvar.addEventListener("click", () => {
+  const texto = inputItem.value.trim();
+  if (texto === "" || !tagInputSelecionada) {
+    alert("Digite um item e selecione uma tag.");
+    return;
+  }
+
+  if (editandoIndex !== null) {
+    tarefas[editandoIndex].texto = texto;
+    tarefas[editandoIndex].tag = tagInputSelecionada;
     editandoIndex = null;
+  } else {
+    tarefas.push({ texto, tag: tagInputSelecionada, concluido: false });
+  }
+
+  salvarTarefas();
+  resetarFormulario();
+  renderizar();
+});
+
+
+btnCancelar.addEventListener("click", () => {
+  resetarFormulario();
+});
+
+function resetarFormulario() {
+  inputItem.value = "";
+  tagInputSelecionada = null;
+  inputTags.forEach(t => t.classList.remove("ativo"));
+  editandoIndex = null;
+  btnSalvar.textContent = "Salvar";
 }
 
-tagBotoes.forEach(btn => {
-    btn.addEventListener("click", () => {
-        tagSelecionada = btn.dataset.tag;
-        tagBotoes.forEach(b => b.classList.remove("selecionado"));
-        btn.classList.add("selecionado");
-    });
-});
+function toggleConcluido(index) {
+  tarefas[index].concluido = !tarefas[index].concluido;
+  salvarTarefas();
+  renderizar();
+}
 
-botaoAdicionar.addEventListener("click", () => {
-    formContainer.style.display = "block";
-});
-
-botaoCancelar.addEventListener("click", () => {
-    formContainer.style.display = "none";
-    limparFormulario();
-});
-
-botaoSalvar.addEventListener("click", () => {
-    const nome = inputItem.value.trim();
-    if (!nome || !tagSelecionada) {
-        alert("Preencha o item e selecione uma tag.");
-        return;
-    }
-
-    const novoItem = { nome, tag: tagSelecionada };
-
-    if (editandoIndex !== null) {
-        itens[editandoIndex] = novoItem;
-    } else {
-        itens.push(novoItem);
-    }
-
-    salvarItens();
-    renderizarItens();
-    formContainer.style.display = "none";
-    limparFormulario();
-});
 
 function editarItem(index) {
-    const item = itens[index];
-    inputItem.value = item.nome;
-    tagSelecionada = item.tag;
-    tagBotoes.forEach(btn => {
-        btn.classList.toggle("selecionado", btn.dataset.tag === tagSelecionada);
-    });
-    formContainer.style.display = "block";
-    editandoIndex = index;
+  const tarefa = tarefas[index];
+  inputItem.value = tarefa.texto;
+  tagInputSelecionada = tarefa.tag;
+  inputTags.forEach(t => {
+    t.classList.toggle("ativo", t.dataset.tag === tarefa.tag);
+  });
+  editandoIndex = index;
+  btnSalvar.textContent = "Atualizar";
 }
 
-function excluirItem(index) {
-    if (confirm("Deseja realmente excluir este item?")) {
-        itens.splice(index, 1);
-        salvarItens();
-        renderizarItens();
+
+
+
+function renderizar() {
+  lista.innerHTML = "";
+
+  const filtradas = tarefas.filter(tarefa =>
+    tagSelecionada === "todos" || tarefa.tag === tagSelecionada
+  );
+
+  filtradas.forEach((tarefa, index) => {
+    const li = document.createElement("li");
+    li.classList.add("item-tarefa");
+
+    const esquerda = document.createElement("div");
+    esquerda.style.display = "flex";
+    esquerda.style.alignItems = "center";
+    esquerda.style.gap = "10px";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = tarefa.concluido;
+    checkbox.addEventListener("change", () => toggleConcluido(index));
+
+    const textoSpan = document.createElement("span");
+    textoSpan.textContent = tarefa.texto;
+    if (tarefa.concluido) {
+      textoSpan.style.textDecoration = "line-through";
+      textoSpan.style.opacity = "0.6";
     }
+
+    esquerda.appendChild(checkbox);
+    esquerda.appendChild(textoSpan);
+
+    const tagSpan = document.createElement("span");
+    tagSpan.classList.add("tag");
+    tagSpan.dataset.tag = tarefa.tag;
+    tagSpan.textContent = tarefa.tag;
+
+    const botoes = document.createElement("div");
+    botoes.style.display = "flex";
+    botoes.style.gap = "5px";
+
+    const btnEditar = document.createElement("button");
+    btnEditar.textContent = "✏️";
+    btnEditar.title = "Editar";
+    btnEditar.onclick = () => editarItem(index);
+
+    const btnExcluir = document.createElement("button");
+    btnExcluir.textContent = "🗑️";
+    btnExcluir.title = "Excluir";
+    btnExcluir.onclick = () => excluirItem(index);
+
+    botoes.appendChild(btnEditar);
+    botoes.appendChild(btnExcluir);
+
+    li.appendChild(esquerda);
+    li.appendChild(tagSpan);
+    li.appendChild(botoes);
+
+    lista.appendChild(li);
+  });
 }
 
-// Modo escuro
-darkModeToggle.addEventListener("change", () => {
-    body.classList.toggle("dark-mode");
-    localStorage.setItem("darkMode", body.classList.contains("dark-mode"));
-});
 
-function carregarModoEscuro() {
-    const dark = localStorage.getItem("darkMode") === "true";
-    if (dark) body.classList.add("dark-mode");
-    darkModeToggle.checked = dark;
+function salvarTarefas() {
+  localStorage.setItem("tarefasChecklist", JSON.stringify(tarefas));
 }
 
-// Filtro por tag
-function criarFiltroTags() {
-    const container = document.createElement("div");
-    container.className = "filtros";
-
-    const todas = document.createElement("button");
-    todas.textContent = "Todas";
-    todas.onclick = () => renderizarItens("");
-    container.appendChild(todas);
-
-    ["medico", "alimentacao", "acessorios", "outros"].forEach(tag => {
-        const btn = document.createElement("button");
-        btn.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
-        btn.onclick = () => renderizarItens(tag);
-        container.appendChild(btn);
-    });
-
-    document.querySelector(".container-checklist").prepend(container);
+function carregarTarefas() {
+  const salvo = localStorage.getItem("tarefasChecklist");
+  return salvo ? JSON.parse(salvo) : [];
 }
 
-window.onload = () => {
-    carregarModoEscuro();
-    renderizarItens();
-    criarFiltroTags();
-};
+renderizar();
