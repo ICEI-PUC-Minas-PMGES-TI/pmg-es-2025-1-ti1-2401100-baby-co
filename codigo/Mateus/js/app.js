@@ -168,3 +168,10 @@ function carregarTarefas() {
 }
 
 renderizar();
+function excluirItem(index) {
+  if (confirm("Deseja excluir este item?")) {
+    tarefas.splice(index, 1);
+    salvarTarefas();
+    renderizar();
+  }
+}
