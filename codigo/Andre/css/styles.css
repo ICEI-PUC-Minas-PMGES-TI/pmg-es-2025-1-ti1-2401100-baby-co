@@ -37,20 +37,25 @@
 
 
 
+
   body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
   }
+
+
+  header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #005045;
+            color: white;
+            padding: 15px 20px;
+        }
+
   
-  #cabecalho {
-    background-color: #004F44;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    padding: 20px 10px;
-  }
+
   
   #container {
     width: 100%;
