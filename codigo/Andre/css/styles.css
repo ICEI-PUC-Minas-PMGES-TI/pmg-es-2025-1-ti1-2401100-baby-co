@@ -55,6 +55,13 @@
         }
 
   
+         header img {
+    height: 70px;    
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
 
   
   #container {
