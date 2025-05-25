@@ -68,6 +68,57 @@
             gap: 20px;
         }
 
+
+        header ul li {
+            cursor: pointer;
+        }
+
+
+     
+        header ul:first-of-type li {
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+
+        header ul:first-of-type li::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #ffffff;
+            transition: width 0.3s ease;
+        }
+
+
+        header ul:first-of-type li:hover {
+            color: #ffffff;
+        }
+
+
+        header ul:first-of-type li:hover::after {
+            width: 100%;
+        }
+
+
+       
+        header ul:last-of-type li i {
+            font-size: 20px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+
+        header ul:last-of-type li:hover i {
+            transform: scale(1.2);
+            color: #a0e5cf;
+        }
+
+
+
   
   #container {
     width: 100%;
