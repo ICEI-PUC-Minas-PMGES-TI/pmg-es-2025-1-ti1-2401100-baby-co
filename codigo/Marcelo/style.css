@@ -1,9 +1,9 @@
 /* style.css */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -133,9 +133,9 @@ body.dark-mode {
 /* Restante do layout do formulário */
 .top-section,
 .bottom-section {
-    background-color: #004F44;
-    height: 20vh;
-    width: 100%;
+  background-color: #004F44;
+  height: 20vh;
+  width: 100%;
 }
 
 .form-container {
@@ -153,49 +153,75 @@ body.dark-mode {
 }
 
 h1 {
-    text-align: center;
-    color: #004F44;
-    margin-bottom: 30px;
-    font-size: 1.8rem;
+  text-align: center;
+  color: #004F44;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
 }
 
+/* Formulário */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Fieldset de seleção */
+fieldset {
+  border: 1px solid #2A7F72;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+legend {
+  font-weight: bold;
+  color: #004F44;
+  margin-bottom: 8px;
+}
+
+fieldset label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 label {
-    font-weight: 600;
-    color: #00352F;
-    font-size: 0.95rem;
+  font-weight: 600;
+  color: #00352F;
+  font-size: 0.95rem;
 }
 
-input {
-    padding: 12px;
-    border: 1px solid #2A7F72;
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: #FFFFFF;
-    color: #000000;
-    transition: border 0.3s ease;
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"] {
+  padding: 12px;
+  border: 1px solid #2A7F72;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #FFFFFF;
+  color: #000000;
+  transition: border 0.3s ease;
 }
 
 input:focus {
-    border-color: #004F44;
-    outline: none;
+  border-color: #004F44;
+  outline: none;
 }
 
 button {
-    padding: 14px;
-    background-color: #2A7F72;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 14px;
+  background-color: #2A7F72;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -203,17 +229,17 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-    .form-container {
-        padding: 30px 20px;
-    }
+  .form-container {
+    padding: 30px 20px;
+  }
 
-    h1 {
-        font-size: 1.5rem;
-    }
+  h1 {
+    font-size: 1.5rem;
+  }
 
-    label {
-        font-size: 0.9rem;
-    }
+  label {
+    font-size: 0.9rem;
+  }
 
     input,
     button {

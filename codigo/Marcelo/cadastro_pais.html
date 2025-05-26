@@ -41,10 +41,16 @@
 
       <label for="nascimento_mae">Data de Nascimento da Mãe:</label>
       <input type="date" id="nascimento_mae" name="nascimento_mae" required />
+      <label for="nascimento_mae">Data de Nascimento da Mãe:</label>
+      <input type="date" id="nascimento_mae" name="nascimento_mae" required />
 
       <label for="pai">Nome do Pai:</label>
       <input type="text" id="pai" name="pai" required />
+      <label for="pai">Nome do Pai:</label>
+      <input type="text" id="pai" name="pai" required />
 
+      <label for="nascimento_pai">Data de Nascimento do Pai:</label>
+      <input type="date" id="nascimento_pai" name="nascimento_pai" required />
       <label for="nascimento_pai">Data de Nascimento do Pai:</label>
       <input type="date" id="nascimento_pai" name="nascimento_pai" required />
 
@@ -53,38 +59,5 @@
   </div>
 
   <div class="bottom-section"></div>
-   <script>
-    const URL_BASE = "http://localhost:3000/";
-
-    document.getElementById("formPais").addEventListener("submit", async function (event) {
-        event.preventDefault();
-        const dados = {
-            mae: document.getElementById("mae").value,
-            nascimento_mae: document.getElementById("nascimento_mae").value,
-            pai: document.getElementById("pai").value,
-            nascimento_pai: document.getElementById("nascimento_pai").value
-        };
-        try {
-            const res = await fetch(`${URL_BASE}pais`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(dados)
-            });
-
-            if (!res.ok) throw new Error("Erro ao salvar dados no servidor");
-
-            const resultado = await res.json();
-            console.log("Pai/mãe cadastrados:", resultado);
-
-            alert("Cadastro salvo com sucesso!");
-            this.reset(); 
-        } catch (err) {
-            console.error("Erro:", err);
-            alert("Falha ao salvar os dados. Verifique o console.");
-        }
-    });
-</script> 
 </body>
 </html>
