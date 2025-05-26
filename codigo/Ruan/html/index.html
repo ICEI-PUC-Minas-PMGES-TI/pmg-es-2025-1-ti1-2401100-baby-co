@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Lembretes</title>
     <link rel="stylesheet" href="../styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+
+
 </head>
+
 <body>
-  <header>
-        <img src="../../public/assets/images/Logo (3).png" alt="Logo">
-        <ul>
-            <li>Inicio</li>
-            <li>Nutrição</li>
-            <li>Blogs</li>
-        </ul>
-        <ul>
-            <li><i class="fas fa-baby"></i></li>
-       <li>
-  <label class="switch">
-    <input type="checkbox" id="darkModeToggle">
-    <span class="slider round"></span>
-  </label>
-</li>
-        </ul>
-    </header>
+<header>
+  <div class="logo-container">
+    <img src="../../public/assets/images/Logo (3).png" alt="Logo">
+  </div>
+
+  <ul class="menu-center">
+    <li>Inicio</li>
+    <li>Nutrição</li>
+    <li>Blogs</li>
+  </ul>
+
+  <div class="menu-right">
+    <i class="fas fa-baby"></i>
+    <label class="switch">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="slider round"></span>
+    </label>
+  </div>
+</header>
 
     <div class="layout">
         <aside class="filters">
@@ -37,18 +53,12 @@
                 <label><input type="checkbox"> Outros</label>
             </div>
 
-            <h2>Status</h2>
-            <div class="checkbox-group">
-                <label><input type="checkbox"> Ativos</label>
-                <label><input type="checkbox"> Completados</label>
-                <label><input type="checkbox"> Próximos</label>
-                <label><input type="checkbox"> Outros</label>
-            </div>
-
             <div class="date-filter">
                 <label>De: <input type="text" placeholder="DD/MM/AAAA"></label>
                 <label>Até: <input type="text" placeholder="DD/MM/AAAA"></label>
             </div>
+            <div id="calendar"></div>
+
         </aside>
 
         <main class="main-content">
@@ -79,14 +89,82 @@
 
             <ul id="lembreteList"></ul>
         </main>
-       
+        
+
+
     </div>
-    
+
     <footer>
-      <div class="footer-content">
-          <p>&copy; 2023 Todos os direitos reservados</p>
-      </div>
-  </footer>
+        <div class="footer-content">
+            <p>&copy; 2023 Todos os direitos reservados</p>
+        </div>
+    </footer>
     <script src="../js/main.js"></script>
+    <script>
+  document.addEventListener('DOMContentLoaded', async function () {
+    const calendarEl = document.getElementById('calendar');
+
+
+    const response = await fetch('http://localhost:3000/lembretes'); 
+    const lembretes = await response.json();
+
+const eventos = lembretes.map(item => ({
+  title: item.titulo,
+  start: item.data,
+  backgroundColor: corPorCategoria(item.categoria),
+  borderColor: corPorCategoria(item.categoria),
+  extendedProps: {
+    descricao: item.descricao,
+    categoria: item.categoria,
+    status: item.status,
+  }
+}));
+
+
+function corPorCategoria(categoria) {
+  const cores = {
+    Vacinas: 'red',
+    Medicamentos: 'green',
+    Consultas: 'blue',
+    Outros: 'orange'
+  };
+  return cores[categoria] || '#ccc';
+}
+
+
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+  initialView: 'dayGridMonth',
+  locale: 'pt-br',
+  height: 400,
+  events: eventos,
+  headerToolbar: {
+    left: 'prev,next',
+    center: 'title',
+    right: 'today'
+  },
+  buttonText: {
+    today: 'hoje' 
+  },
+  
+eventDidMount: function(info) {
+  tippy(info.el, {
+    content: `
+      <strong>${info.event.title}</strong><br>
+      ${info.event.extendedProps.descricao}
+    `,
+    allowHTML: true,
+    theme: 'light-border'
+  });
+}
+
+
+});
+
+
+    calendar.render();
+  });
+</script>
+
 </body>
+
 </html>
