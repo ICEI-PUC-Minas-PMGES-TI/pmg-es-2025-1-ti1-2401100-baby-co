@@ -1,222 +1,247 @@
 /* style.css */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #FFFFFF;
-    color: #333333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #FFFFFF;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Cabeçalho */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #005045;
-    color: #FFFFFF;
-    padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005045;
+  color: #FFFFFF;
+  padding: 15px 20px;
 }
 
 header img {
-    height: 70px;
-    width: auto;
-    object-fit: contain;
-    display: block;
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 header ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
+  display: flex;
+  list-style: none;
+  gap: 20px;
 }
 
 header ul li {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-/* Underline animado no menu principal */
 header ul:first-of-type li {
-    position: relative;
-    padding: 5px 0;
-    transition: color 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
 }
 
 header ul:first-of-type li::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 0;
-    background-color: #FFFFFF;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #FFFFFF;
+  transition: width 0.3s ease;
 }
 
 header ul:first-of-type li:hover {
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 header ul:first-of-type li:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
-/* Ícones e hover */
 header ul:last-of-type li i {
-    font-size: 20px;
-    color: #FFFFFF;
-    transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 20px;
+  color: #FFFFFF;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 header ul:last-of-type li:hover i {
-    transform: scale(1.2);
-    color: #A0E5CF;
+  transform: scale(1.2);
+  color: #A0E5CF;
 }
 
 /* Switch de Dark Mode */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
 }
 
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    inset: 0;
-    background-color: #ccc;
-    border-radius: 20px;
-    transition: 0.4s;
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: 0.4s;
 }
 
 .slider::before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 2px;
-    bottom: 2px;
-    background-color: #FFFFFF;
-    border-radius: 50%;
-    transition: 0.4s;
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  transition: 0.4s;
 }
 
 .switch input:checked + .slider {
-    background-color: #2196F3;
+  background-color: #2196F3;
 }
 
 .switch input:checked + .slider::before {
-    transform: translateX(20px);
+  transform: translateX(20px);
 }
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #222222;
-    color: #DDDDDD;
+  background-color: #222222;
+  color: #DDDDDD;
 }
 
-/* Restante do layout do formulário */
+/* Seções superior/inferior */
 .top-section,
 .bottom-section {
-    background-color: #004F44;
-    height: 20vh;
-    width: 100%;
+  background-color: #004F44;
+  height: 20vh;
+  width: 100%;
 }
 
+/* Container do formulário */
 .form-container {
-    background-color: #FFFFFF;
-    padding: 40px 30px;
-    width: 90%;
-    max-width: 500px;
-    margin: 60px auto;
-    border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    flex-grow: 1;
-    position: relative;
-    z-index: 1;
-    transition: all 0.3s ease-in-out;
+  background-color: #FFFFFF;
+  padding: 40px 30px;
+  width: 90%;
+  max-width: 500px;
+  margin: 60px auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
 }
 
 h1 {
-    text-align: center;
-    color: #004F44;
-    margin-bottom: 30px;
-    font-size: 1.8rem;
+  text-align: center;
+  color: #004F44;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
 }
 
+/* Formulário */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Fieldset de seleção */
+fieldset {
+  border: 1px solid #2A7F72;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+legend {
+  font-weight: bold;
+  color: #004F44;
+  margin-bottom: 8px;
+}
+
+fieldset label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 label {
-    font-weight: 600;
-    color: #00352F;
-    font-size: 0.95rem;
+  font-weight: 600;
+  color: #00352F;
+  font-size: 0.95rem;
 }
 
-input {
-    padding: 12px;
-    border: 1px solid #2A7F72;
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: #FFFFFF;
-    color: #000000;
-    transition: border 0.3s ease;
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"] {
+  padding: 12px;
+  border: 1px solid #2A7F72;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #FFFFFF;
+  color: #000000;
+  transition: border 0.3s ease;
 }
 
 input:focus {
-    border-color: #004F44;
-    outline: none;
+  border-color: #004F44;
+  outline: none;
 }
 
 button {
-    padding: 14px;
-    background-color: #2A7F72;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 14px;
+  background-color: #2A7F72;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #1E5D56;
+  background-color: #1E5D56;
 }
 
 @media (max-width: 600px) {
-    .form-container {
-        padding: 30px 20px;
-    }
+  .form-container {
+    padding: 30px 20px;
+  }
 
-    h1 {
-        font-size: 1.5rem;
-    }
+  h1 {
+    font-size: 1.5rem;
+  }
 
-    label {
-        font-size: 0.9rem;
-    }
+  label {
+    font-size: 0.9rem;
+  }
 
-    input,
-    button {
-        font-size: 0.95rem;
-    }
+  input,
+  button {
+    font-size: 0.95rem;
+  }
 }
