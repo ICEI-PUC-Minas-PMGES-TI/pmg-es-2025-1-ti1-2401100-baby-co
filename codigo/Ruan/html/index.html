@@ -49,18 +49,12 @@
                 <label><input type="checkbox"> Outros</label>
             </div>
 
-            <h2>Status</h2>
-            <div class="checkbox-group">
-                <label><input type="checkbox"> Ativos</label>
-                <label><input type="checkbox"> Completados</label>
-                <label><input type="checkbox"> Próximos</label>
-                <label><input type="checkbox"> Outros</label>
-            </div>
-
             <div class="date-filter">
                 <label>De: <input type="text" placeholder="DD/MM/AAAA"></label>
                 <label>Até: <input type="text" placeholder="DD/MM/AAAA"></label>
             </div>
+            <div id="calendar"></div>
+
         </aside>
 
         <main class="main-content">
@@ -90,7 +84,6 @@
             </form>
 
             <ul id="lembreteList"></ul>
-            <div id="calendar"></div>
         </main>
         
 
@@ -123,18 +116,41 @@
     }));
 
 
+    // const calendar = new FullCalendar.Calendar(calendarEl, {
+    //   initialView: 'dayGridMonth',
+    //   locale: 'pt-br',
+    //   events: eventos,
+    //   eventClick: function(info) {
+    //     alert(
+    //       `Título: ${info.event.title}\n` +
+    //       `Descrição: ${info.event.extendedProps.descricao}\n` +
+    //       `Categoria: ${info.event.extendedProps.categoria}`
+    //     );
+    //   }
+    // });
+
     const calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      locale: 'pt-br',
-      events: eventos,
-      eventClick: function(info) {
-        alert(
-          `Título: ${info.event.title}\n` +
-          `Descrição: ${info.event.extendedProps.descricao}\n` +
-          `Categoria: ${info.event.extendedProps.categoria}`
-        );
-      }
-    });
+  initialView: 'dayGridMonth',
+  locale: 'pt-br',
+  height: 400,
+  events: eventos,
+  headerToolbar: {
+    left: 'prev,next',
+    center: 'title',
+    right: 'today'
+  },
+  buttonText: {
+    today: 'hoje' // <- aqui você personaliza o texto do botão
+  },
+  eventClick: function(info) {
+    alert(
+      `Título: ${info.event.title}\n` +
+      `Descrição: ${info.event.extendedProps.descricao}\n` +
+      `Categoria: ${info.event.extendedProps.categoria}`
+    );
+  }
+});
+
 
     calendar.render();
   });
