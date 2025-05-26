@@ -42,16 +42,7 @@
       "sangue": "B+"
     }
   ],
-  "lembretes": [
-    {
-      "titulo": "Título do Lembrete",
-      "categoria": "Vacinas",
-      "descricao": "Descrição do Lembrete",
-      "data": "2025-05-08",
-      "status": "ativo",
-      "id": 2
-    }
-  ],
+  "lembretes": [],
   "pais": [
     {
       "mae": "mae",
