@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Cadastro dos Pais</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Cadastro dos Pais</title>
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <!-- Seu CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Seu JS principal -->
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="top-section"></div>
+  <!-- Header padronizado -->
+  <header>
+    <img src="Images/logo.png" alt="Logo" />
+    <ul>
+      <li>Início</li>
+      <li>Nutrição</li>
+      <li>Blogs</li>
+    </ul>
+    <ul>
+      <li><i class="fas fa-baby"></i></li>
+      <li>
+        <label class="switch">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider round"></span>
+        </label>
+      </li>
+    </ul>
+  </header>
 
-    <div class="form-container">
-        <h1>Cadastro dos Pais</h1>
-        <form id="formPais">
-            <label for="mae">Nome da Mãe:</label>
-            <input type="text" id="mae" name="mae" required>
+<div class="form-container">
+    <h1>Cadastro dos Pais</h1>
+    <form id="formPais">
+      <label for="mae">Nome da Mãe:</label>
+      <input type="text" id="mae" name="mae" required />
 
-            <label for="nascimento_mae">Data de Nascimento da Mãe:</label>
-            <input type="date" id="nascimento_mae" name="nascimento_mae" required>
+      <label for="nascimento_mae">Data de Nascimento da Mãe:</label>
+      <input type="date" id="nascimento_mae" name="nascimento_mae" required />
 
-            <label for="pai">Nome do Pai:</label>
-            <input type="text" id="pai" name="pai" required>
+      <label for="pai">Nome do Pai:</label>
+      <input type="text" id="pai" name="pai" required />
 
-            <label for="nascimento_pai">Data de Nascimento do Pai:</label>
-            <input type="date" id="nascimento_pai" name="nascimento_pai" required>
+      <label for="nascimento_pai">Data de Nascimento do Pai:</label>
+      <input type="date" id="nascimento_pai" name="nascimento_pai" required />
 
-            <button type="submit">Cadastrar</button>
-        </form>
-    </div>
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
 
-    <div class="bottom-section"></div>
-
-    
-    <script>
+  <div class="bottom-section"></div>
+   <script>
     const URL_BASE = "http://localhost:3000/";
 
     document.getElementById("formPais").addEventListener("submit", async function (event) {
@@ -62,7 +85,6 @@
             alert("Falha ao salvar os dados. Verifique o console.");
         }
     });
-</script>
-
+</script> 
 </body>
 </html>
