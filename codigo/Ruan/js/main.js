@@ -2,7 +2,7 @@ const form = document.getElementById('lembreteForm');
 const list = document.getElementById('lembreteList');
 const URL_BASE = "http://localhost:3000/";
 
-form.addEventListener('submit', async function(e) {
+form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const titulo = document.getElementById('titulo').value.trim();
@@ -25,7 +25,7 @@ form.addEventListener('submit', async function(e) {
 
         alert("Lembrete salvo com sucesso!");
         form.reset();
-        await carregarLembretes(); 
+        await carregarLembretes();
     } catch (err) {
         console.error(err);
         alert("Erro ao salvar o lembrete. Verifique o console.");
@@ -44,7 +44,8 @@ function criarElementoLembrete(lembrete) {
         <div class="item-header">
             <strong>${lembrete.titulo}</strong>
             <span class="${categoriaClass}">${lembrete.categoria}</span>
-            <small>${lembrete.data}</small>
+<small>${formatarData(lembrete.data)}</small>
+
             <p>${lembrete.descricao}</p>
         </div>
         <div class="actions">
@@ -76,23 +77,23 @@ function criarElementoLembrete(lembrete) {
 
 
     li.querySelector('.done').addEventListener('click', async () => {
-    const confirmar = confirm('Marcar como finalizado?');
-    if (!confirmar) return;
+        const confirmar = confirm('Marcar como finalizado?');
+        if (!confirmar) return;
 
-    try {
-        const res = await fetch(`${URL_BASE}lembretes/${lembrete.id}`, {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ status: "finalizado" })
-        });
+        try {
+            const res = await fetch(`${URL_BASE}lembretes/${lembrete.id}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status: "finalizado" })
+            });
 
-        if (!res.ok) throw new Error("Erro ao finalizar lembrete");
-        await carregarLembretes();
-    } catch (err) {
-        console.error(err);
-        alert("Erro ao finalizar lembrete.");
-    }
-});
+            if (!res.ok) throw new Error("Erro ao finalizar lembrete");
+            await carregarLembretes();
+        } catch (err) {
+            console.error(err);
+            alert("Erro ao finalizar lembrete.");
+        }
+    });
 
 
 
@@ -116,6 +117,10 @@ function criarElementoLembrete(lembrete) {
     list.appendChild(li);
 }
 
+function formatarData(dataISO) {
+    const [ano, mes, dia] = dataISO.split('-');
+    return `${dia}/${mes}/${ano}`;
+}
 
 
 
@@ -171,6 +176,6 @@ window.addEventListener('DOMContentLoaded', carregarLembretes);
 const toggle = document.getElementById('darkModeToggle');
 
 
-  toggle.addEventListener('change', () => {
+toggle.addEventListener('change', () => {
     document.body.classList.toggle('dark-mode');
-  });  
+});  

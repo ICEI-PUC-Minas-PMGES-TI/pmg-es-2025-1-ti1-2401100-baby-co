@@ -15,6 +15,10 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+
 
 </head>
 
@@ -104,30 +108,29 @@
     const response = await fetch('http://localhost:3000/lembretes'); 
     const lembretes = await response.json();
 
+const eventos = lembretes.map(item => ({
+  title: item.titulo,
+  start: item.data,
+  backgroundColor: corPorCategoria(item.categoria),
+  borderColor: corPorCategoria(item.categoria),
+  extendedProps: {
+    descricao: item.descricao,
+    categoria: item.categoria,
+    status: item.status,
+  }
+}));
 
-    const eventos = lembretes.map(item => ({
-      title: item.titulo,
-      start: item.data,
-      extendedProps: {
-        descricao: item.descricao,
-        categoria: item.categoria,
-        status: item.status,
-      }
-    }));
 
+function corPorCategoria(categoria) {
+  const cores = {
+    Vacinas: 'red',
+    Medicamentos: 'green',
+    Consultas: 'blue',
+    Outros: 'orange'
+  };
+  return cores[categoria] || '#ccc';
+}
 
-    // const calendar = new FullCalendar.Calendar(calendarEl, {
-    //   initialView: 'dayGridMonth',
-    //   locale: 'pt-br',
-    //   events: eventos,
-    //   eventClick: function(info) {
-    //     alert(
-    //       `Título: ${info.event.title}\n` +
-    //       `Descrição: ${info.event.extendedProps.descricao}\n` +
-    //       `Categoria: ${info.event.extendedProps.categoria}`
-    //     );
-    //   }
-    // });
 
     const calendar = new FullCalendar.Calendar(calendarEl, {
   initialView: 'dayGridMonth',
@@ -140,15 +143,21 @@
     right: 'today'
   },
   buttonText: {
-    today: 'hoje' // <- aqui você personaliza o texto do botão
+    today: 'hoje' 
   },
-  eventClick: function(info) {
-    alert(
-      `Título: ${info.event.title}\n` +
-      `Descrição: ${info.event.extendedProps.descricao}\n` +
-      `Categoria: ${info.event.extendedProps.categoria}`
-    );
-  }
+  
+eventDidMount: function(info) {
+  tippy(info.el, {
+    content: `
+      <strong>${info.event.title}</strong><br>
+      ${info.event.extendedProps.descricao}
+    `,
+    allowHTML: true,
+    theme: 'light-border'
+  });
+}
+
+
 });
 
 
