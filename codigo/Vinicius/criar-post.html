@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Criar Post:</title>
+  <link rel="stylesheet" href="css/criarpost.css">
+</head>
+<body>
+  <h1>Criar novo post</h1>
+  <form id="postForm">
+    <label>Título: <input type="text" id="titulo" rows="1" required></label><br>
+    <label>Imagem (URL): <input type="text" id="imagem" rows="1" required></label><br>
+     <label>conteudo: <input type="text" id="conteudo" rows="10" required></label><br>
+    <button type="submit">Salvar</button>
+  </form>
+
+  <script>
+    document.getElementById('postForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const post = {
+        titulo: document.getElementById('titulo').value,
+        imagem: document.getElementById('imagem').value,
+        conteudo: document.getElementById('conteudo').value
+      };
+      let posts = JSON.parse(localStorage.getItem('posts')) || [];
+      posts.push(post);
+      localStorage.setItem('posts', JSON.stringify(posts));
+      window.location.href = 'artigos.html';
+    });
+  </script>
+</body>
+</html>
