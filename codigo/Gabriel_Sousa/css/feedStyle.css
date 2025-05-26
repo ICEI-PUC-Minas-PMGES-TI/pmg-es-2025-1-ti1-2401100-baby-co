@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+#feed-container {
+  max-width: 600px;
+  margin: 32px auto;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+h1 {
+  text-align: center;
+}
+article {
+  border-bottom: 1px solid #ddd;
+  padding: 16px 0;
+}
+article:last-child {
+  border: none;
+}
+.title {
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+}
+.content {
+  margin: 0 0 12px;
+}
+.btn-like {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.comments {
+  margin-top: 12px;
+}
+.comment-item {
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
+}
+.comment-form {
+  display: flex;
+  margin-top: 8px;
+}
+.comment-form input {
+  flex: 1;
+  padding: 8px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.comment-form button {
+  padding: 8px 12px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
