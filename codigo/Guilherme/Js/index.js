@@ -13,11 +13,9 @@ navItems.forEach(item => {
     const targetDiv = document.querySelector(`.${target}`);
     if (targetDiv) {
       targetDiv.style.display = 'block';
-      // Se for aba Analise, carrega o gráfico
       if (target === 'Analise') {
         loadGrafico();
       }
-      // Se for aba historico, carrega histórico
       if (target === 'historico') {
         loadHistorico();
       }
@@ -37,9 +35,8 @@ const form = document.getElementById("formCadastro");
 const containerHistorico = document.querySelector('.mananger');
 const ctxGrafico = document.getElementById('graficoCrescimento').getContext('2d');
 
-let chartInstance = null; // Para guardar a instância do gráfico e poder atualizar depois
+let chartInstance = null;
 
-// Evento para cadastrar dados
 if (form) {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -65,7 +62,6 @@ if (form) {
         alert("Dados cadastrados com sucesso!");
         form.reset();
         loadHistorico();
-        // Se o gráfico estiver aberto, atualiza
         if (document.querySelector('.Analise').style.display === 'block') {
           loadGrafico();
         }
@@ -79,7 +75,6 @@ if (form) {
   });
 }
 
-// Função para carregar histórico e popular o container
 async function loadHistorico() {
   try {
     const response = await fetch("http://localhost:3000/dadosBebe");
@@ -97,7 +92,7 @@ async function loadHistorico() {
         </div>
         <div class="bt-card"></div> 
         <div class="info-card"> 
-          <label class="title-card-hist">IDADE</label>
+          <label class="title-card-hist">IDADE:</label>
           <label class="info-card-hist">${dado.idade} meses</label>
         </div>
         <button class="btn-delete" data-id="${dado.id}">
@@ -112,7 +107,6 @@ async function loadHistorico() {
       containerHistorico.appendChild(card);
     });
 
-    // Adiciona evento de exclusão
     const botoesDeletar = document.querySelectorAll('.btn-delete');
     botoesDeletar.forEach(botao => {
       botao.addEventListener('click', async () => {
@@ -125,7 +119,6 @@ async function loadHistorico() {
           if (response.ok) {
             alert('Registro excluído com sucesso.');
             loadHistorico();
-            // Atualiza gráfico se estiver aberto
             if (document.querySelector('.Analise').style.display === 'block') {
               loadGrafico();
             }
@@ -144,20 +137,44 @@ async function loadHistorico() {
   }
 }
 
-// Função para carregar e desenhar o gráfico
 async function loadGrafico() {
   try {
-    const response = await fetch("http://localhost:3000/dadosBebe");
-    const dados = await response.json();
+  
+    const respBebe = await fetch("http://localhost:3000/dadosBebe");
+    const dadosBebe = await respBebe.json();
 
-    // Ordena os dados por idade
-    dados.sort((a, b) => a.idade - b.idade);
 
-    // Extrai as idades e pesos para os dados do gráfico
-    const labels = dados.map(dado => dado.idade + 'M');
-    const pesos = dados.map(dado => dado.peso);
+    const respIdeais = await fetch("http://localhost:3000/dadosBebesIdeais");
+    const dadosIdeais = await respIdeais.json();
 
-    // Se já existe gráfico, destrói antes de criar outro
+  
+    dadosBebe.sort((a, b) => a.idade - b.idade);
+    dadosIdeais.sort((a, b) => a.idade - b.idade);
+
+
+    const idades = Array.from(new Set([
+      ...dadosBebe.map(d => d.idade),
+      ...dadosIdeais.map(d => d.idade)
+    ])).sort((a, b) => a - b);
+
+
+    const pesoRealPorIdade = idade => {
+      const dado = dadosBebe.find(d => d.idade === idade);
+      return dado ? dado.peso : null;
+    };
+
+    const pesoIdealPorIdade = idade => {
+      const dado = dadosIdeais.find(d => d.idade === idade);
+      return dado ? dado.peso : null;
+    };
+
+    
+    const pesosReais = idades.map(idade => pesoRealPorIdade(idade));
+    const pesosIdeais = idades.map(idade => pesoIdealPorIdade(idade));
+
+    
+    const labels = idades.map(i => `${i} meses`);
+
     if (chartInstance) {
       chartInstance.destroy();
     }
@@ -166,16 +183,29 @@ async function loadGrafico() {
       type: 'line',
       data: {
         labels: labels,
-        datasets: [{
-          label: 'Peso do bebê (kg)',
-          data: pesos,
-          fill: false,
-          borderColor: 'rgba(0, 79, 68, 1)',
-          backgroundColor: 'rgba(0, 79, 68, 0.5)',
-          tension: 0.1,
-          pointRadius: 5,
-          pointHoverRadius: 7,
-        }]
+        datasets: [
+          {
+            label: 'Peso Real do Bebê (kg)',
+            data: pesosReais,
+            fill: false,
+            borderColor: 'rgba(0, 79, 68, 1)',
+            backgroundColor: 'rgba(0, 79, 68, 0.5)',
+            tension: 0.1,
+            pointRadius: 5,
+            pointHoverRadius: 7,
+          },
+          {
+            label: 'Peso Ideal do Bebê (kg)',
+            data: pesosIdeais,
+            fill: false,
+            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            borderDash: [5, 5], 
+            tension: 0.1,
+            pointRadius: 5,
+            pointHoverRadius: 7,
+          }
+        ]
       },
       options: {
         scales: {
@@ -205,12 +235,12 @@ async function loadGrafico() {
         }
       }
     });
+
   } catch (error) {
     console.error('Erro ao carregar dados para o gráfico:', error);
   }
 }
 
-// Ao carregar a página, seleciona a primeira aba e carrega histórico
 window.addEventListener('DOMContentLoaded', () => {
   if (navItems.length > 0) {
     navItems[0].click();
