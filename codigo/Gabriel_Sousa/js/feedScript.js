@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3001';
+const API_URL = 'http://localhost:3000';
 let posts = [];
 let commentsMap = {};
 let likesMap = {};
@@ -8,22 +8,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadFeed() {
-  const testimonials = await fetchData('testimonials');
-  const articles = await fetchData('articles'); // placeholder
+  const testimonials = await fetchData('servicos');
+  const articles = await fetchData('depoimentos'); 
   posts = [...testimonials, ...articles];
+  console.log(posts)
 
-  const comments = await fetchData('comments');
-  commentsMap = comments.reduce((acc, c) => {
-    acc[c.itemId] = acc[c.itemId] || [];
-    acc[c.itemId].push(c);
-    return acc;
-  }, {});
+  const comments = ""
+  // await fetchData('comments');
+  // commentsMap = comments.reduce((acc, c) => {
+  //   acc[c.itemId] = acc[c.itemId] || [];
+  //   acc[c.itemId].push(c);
+  //   return acc;
+  // }, {});
 
-  const likes = await fetchData('likes');
-  likesMap = likes.reduce((acc, l) => {
-    acc[l.itemId] = (acc[l.itemId] || 0) + 1;
-    return acc;
-  }, {});
+  const likes = "" 
+  // await fetchData('likes');
+  // likesMap = likes.reduce((acc, l) => {
+  //   acc[l.itemId] = (acc[l.itemId] || 0) + 1;
+  //   return acc;
+  // }, {});
 
   renderFeed();
 }
@@ -47,11 +50,11 @@ function renderFeed() {
 
     const title = document.createElement('h2');
     title.className = 'title';
-    title.textContent = p.title || 'Depoimento';
+    title.textContent = p.titulo || 'Depoimento';
 
     const content = document.createElement('p');
     content.className = 'content';
-    content.textContent = p.content;
+    content.textContent = p.descricao || p.texto;
 
     const btnLike = document.createElement('button');
     btnLike.className = 'btn-like';
