@@ -237,6 +237,12 @@ input:checked + .slider::before { transform: translateX(24px); }
 
 @media (max-width: 768px) {
   
+header ul {
+        
+    
+        align-items: center;
+    
+    }
 
     .container-checklist {
         margin: 20px 15px;
