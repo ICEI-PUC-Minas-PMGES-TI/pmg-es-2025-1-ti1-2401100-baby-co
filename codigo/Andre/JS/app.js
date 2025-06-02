@@ -47,13 +47,11 @@ document.getElementById("form").addEventListener("submit", function (e) {
   })
     .then((response) => response.json())
     .then((data) => {
-      alert("Bebê cadastrado com sucesso!");
-      e.target.reset();
-    })
-    .catch((error) => {
-      console.error("Erro ao cadastrar bebê:", error);
-      alert("Houve um erro ao cadastrar o bebê. Tente novamente.");
-    });
+  alert("Bebê cadastrado com sucesso!");
+  e.target.reset();
+  formAlterado = false; 
+});
+
 });
 
 document.getElementById("nascimento").addEventListener("input", function (e) {
