@@ -9,19 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
         card.className = "cards-bebes";
         card.dataset.nome = bebe.nome;
 
-        card.innerHTML = `
-          <img src="https://via.placeholder.com/100" alt="Foto de ${bebe.nome}">
-          <div>
-            <h3>${bebe.nome}</h3>
-            <p>${bebe.nascimento}</p>
-            <p>${bebe.sexo}</p>
-          </div>
-          <div class="actions">
-            <button class="edit">✏️</button>
-            <button class="delete">❌</button>
-          </div>
-        `;
-
+       card.innerHTML = `
+        <div class="card-foto">
+          <img src="https://via.placeholder.com/100" alt="Foto de ${bebe.nome}" />
+        </div>
+        <div class="card-info">
+          <h3>${bebe.nome}</h3>
+          <p>${bebe.nascimento}</p>
+          <p>${bebe.sexo}</p>
+        </div>
+        <div class="card-actions">
+          <button class="edit">✏️</button>
+          <button class="delete">❌</button>
+        </div>
+`;
         listaBebes.appendChild(card);
       });
     })
