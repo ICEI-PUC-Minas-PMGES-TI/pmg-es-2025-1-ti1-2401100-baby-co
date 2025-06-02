@@ -9,16 +9,7 @@
 <body>
   <main class="container">
     <section class="posts">
-      <article class="post">
-        <img src="imagens/familia.jpg" alt="Família" >
-        <p>placeholder</p>
-        <a href="post1.html" class="btn">Ler mais</a>
-      </article>
-      <article class="post">
-        <img src="imagens/Bebe.jpg" alt="Bebe" >
-        <p>placeholder</p>
-        <a href="post2.html" class="btn">Ler mais</a>
-      </article>
+      
     </section>
 
     <aside class="sidebar">
@@ -43,19 +34,29 @@
     </aside>
   </main>
   <script>
-  const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
-  const postsContainer = document.querySelector('.posts');
+  async function carregarPosts() {
+    try {
+      const response = await fetch('http://localhost:3000/obter-posts');
+      const posts = await response.json();
 
-  savedPosts.forEach(post => {
-    const article = document.createElement('article');
-    article.classList.add('post');
-    article.innerHTML = `
-      <img src="${post.imagem}" alt="${post.titulo}">
-      <p>${post.conteudo}</p>
-      <a href="#" class="btn">Ler mais</a>
-    `;
-    postsContainer.appendChild(article);
-  });
-  </script>
+      const postsContainer = document.querySelector('.posts');
+
+      posts.forEach(post => {
+        const article = document.createElement('article');
+        article.classList.add('post');
+        article.innerHTML = `
+          <img src="${post.imagem}" alt="${post.titulo}">
+          <p>${post.conteudo}</p>
+          <a href="#" class="btn">Ler mais</a>
+        `;
+        postsContainer.appendChild(article);
+      });
+    } catch (error) {
+      console.error('Erro ao carregar posts:', error);
+    }
+  }
+
+  carregarPosts();
+</script>
 </body>
 </html>
