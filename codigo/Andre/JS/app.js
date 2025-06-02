@@ -72,3 +72,11 @@ document.getElementById("peso").addEventListener("input", function (e) {
 document.getElementById("altura").addEventListener("input", function (e) {
   e.target.value = e.target.value.replace(/\D/g, "");
 });
+
+let formAlterado = false;
+
+document.querySelectorAll("#form input, #form select").forEach(input => {
+  input.addEventListener("input", () => {
+    formAlterado = true;
+  });
+});
