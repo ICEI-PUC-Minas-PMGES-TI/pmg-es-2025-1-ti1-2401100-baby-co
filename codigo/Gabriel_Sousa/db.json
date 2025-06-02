@@ -42,5 +42,31 @@
       "texto": "Testando",
       "imagem": "usuario1.png"
     }
+  ],
+  "comments": [
+    {
+      "itemId": "60c4",
+      "user": "João",
+      "text": "Aplicativo maravilhoso!",
+      "timestamp": "2025-06-01T10:15:00"
+    },
+    {
+      "itemId": "c71c",
+      "user": "Ana",
+      "text": "Muito útil para acompanhar o sono.",
+      "timestamp": "2025-06-01T11:00:00"
+    }
+  ],
+  "likes": [
+    {
+      "itemId": "60c4",
+      "userId": "user-abc123",
+      "timestamp": "2025-06-01T09:00:00"
+    },
+    {
+      "itemId": "c71c",
+      "userId": "user-def456",
+      "timestamp": "2025-06-01T09:05:00"
+    }
   ]
 }
