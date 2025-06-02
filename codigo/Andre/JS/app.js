@@ -80,3 +80,15 @@ document.querySelectorAll("#form input, #form select").forEach(input => {
     formAlterado = true;
   });
 });
+
+
+document.querySelectorAll("header a").forEach(link => {
+  link.addEventListener("click", function (e) {
+    if (formAlterado) {
+      const confirmar = confirm("Você fez alterações no formulário. Tem certeza de que deseja sair sem salvar?");
+      if (!confirmar) {
+        e.preventDefault(); 
+      }
+    }
+  });
+});
