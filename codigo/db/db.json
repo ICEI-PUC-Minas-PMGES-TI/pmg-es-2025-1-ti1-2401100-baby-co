@@ -99,5 +99,99 @@
       "nascimento_pai": "2025-05-01",
       "id": 2
     }
+  ],
+  "dadosBebesIdeais": [
+    {
+      "id": "i1",
+      "peso": 3.3,
+      "idade": 0
+    },
+    {
+      "id": "i2",
+      "peso": 4.5,
+      "idade": 1
+    },
+    {
+      "id": "i3",
+      "peso": 5.6,
+      "idade": 2
+    },
+    {
+      "id": "i4",
+      "peso": 6.4,
+      "idade": 3
+    },
+    {
+      "id": "i5",
+      "peso": 7,
+      "idade": 4
+    },
+    {
+      "id": "i6",
+      "peso": 7.5,
+      "idade": 5
+    },
+    {
+      "id": "i7",
+      "peso": 8,
+      "idade": 6
+    },
+    {
+      "id": "i8",
+      "peso": 8.4,
+      "idade": 7
+    },
+    {
+      "id": "i9",
+      "peso": 8.6,
+      "idade": 8
+    }
+  ],
+  "dadosBebe": [
+    {
+      "id": "m1",
+      "peso": 2.9,
+      "idade": 0
+    },
+    {
+      "id": "m2",
+      "peso": 3.8,
+      "idade": 1
+    },
+    {
+      "id": "m3",
+      "peso": 5.2,
+      "idade": 2
+    },
+    {
+      "id": "m4",
+      "peso": 6.1,
+      "idade": 3
+    },
+    {
+      "id": "m5",
+      "peso": 6.9,
+      "idade": 4
+    },
+    {
+      "id": "m6",
+      "peso": 7.8,
+      "idade": 5
+    },
+    {
+      "id": "m7",
+      "peso": 8.3,
+      "idade": 6
+    },
+    {
+      "id": "m8",
+      "peso": 8.9,
+      "idade": 7
+    },
+    {
+      "id": "m9",
+      "peso": 9.5,
+      "idade": 8
+    }
   ]
 }
