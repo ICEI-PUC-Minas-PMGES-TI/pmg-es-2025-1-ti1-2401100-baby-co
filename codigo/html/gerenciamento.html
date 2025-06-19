@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pós Cadastro - Gerenciamento de Família</title>
+  <link rel="stylesheet" href="css/poscadastro.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gerenciamento da Família</h1>
+    <section id="registration">
+      <h2>Adicionar integrante</h2>
+      <form id="addMemberForm">
+        <select id="memberType">
+          <option value="pai">Pai</option>
+          <option value="mae">Mãe</option>
+          <option value="filho">Filho</option>
+          <option value="filha">Filha</option>
+        </select>
+        <input type="text" id="memberName" placeholder="Nome do integrante" required />
+        <button type="submit">Adicionar</button>
+      </form>
+    </section>
+
+    <section id="members">
+      <h2>Lista de Integrantes</h2>
+      <ul class="member-list" id="memberList"></ul>
+    </section>
+
+    <section id="treeView">
+      <h2>Árvore Genealógica</h2>
+      <div class="tree" id="familyTree"></div>
+    </section>
+  </div>
+
+  <script>
+    const members = [];
+    const form = document.getElementById('addMemberForm');
+    const listEl = document.getElementById('memberList');
+    const treeEl = document.getElementById('familyTree');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const type = document.getElementById('memberType').value;
+      const name = document.getElementById('memberName').value.trim();
+      if (!name) return;
+      members.push({ type, name });
+      document.getElementById('memberName').value = '';
+      renderList();
+      renderTree();
+    });
+
+    function renderList() {
+      listEl.innerHTML = '';
+      members.forEach((m, i) => {
+        const li = document.createElement('li');
+        let label = '';
+        switch(m.type) {
+          case 'pai': label = 'Pai'; break;
+          case 'mae': label = 'Mãe'; break;
+          case 'filho': label = 'Filho'; break;
+          case 'filha': label = 'Filha'; break;
+        }
+        li.textContent = `${label}: ${m.name}`;
+        const btn = document.createElement('button');
+        btn.textContent = 'Remover';
+        btn.style.marginLeft = '10px';
+        btn.onclick = () => { members.splice(i, 1); renderList(); renderTree(); };
+        li.appendChild(btn);
+        listEl.appendChild(li);
+      });
+    }
+
+    function renderTree() {
+      treeEl.innerHTML = '';
+      const ulRoot = document.createElement('ul');
+      const rootLi = document.createElement('li');
+      rootLi.textContent = 'Você';
+
+      const childrenUl = document.createElement('ul');
+      members.forEach(m => {
+        const childLi = document.createElement('li');
+        let label = '';
+        switch(m.type) {
+          case 'pai': label = 'Pai'; break;
+          case 'mae': label = 'Mãe'; break;
+          case 'filho': label = 'Filho'; break;
+          case 'filha': label = 'Filha'; break;
+        }
+        childLi.textContent = `${label}: ${m.name}`;
+        childrenUl.appendChild(childLi);
+      });
+
+      rootLi.appendChild(childrenUl);
+      ulRoot.appendChild(rootLi);
+      treeEl.appendChild(ulRoot);
+    }
+  </script>
+</body>
+</html>

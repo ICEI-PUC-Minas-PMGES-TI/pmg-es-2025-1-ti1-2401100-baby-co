@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/curveBaby.css">
+
+</head>
+
+<body>
+    <header>
+        <img src="../../../Images/logo.png" alt="Logo">
+        <ul>
+            <li>Inicio</li>
+            <li>Nutrição</li>
+            <li>Blogs</li>
+        </ul>
+        <ul>
+            <li><i class="fas fa-baby"></i></li>
+            <li>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider round"></span>
+                </label>
+            </li>
+
+
+        </ul>
+    </header>
+    <div class="organiza">
+        <main>
+            <nav>
+                <div class="nav_info" data-target="CadastroPeso">
+                    <p>Cadastro de Informações</p>
+                </div>
+                <div class="nav_info" data-target="historico">
+                    <p>Histórico</p>
+                </div>
+                <div class="nav_info" data-target="Analise">
+                    <p>Análise Comparativa</p>
+                </div>
+            </nav>
+
+            <div class="side">
+                <div class="CadastroPeso">
+                    <p>
+                        Preencha abaixo as informações de peso e idade do bebê.
+                        Esses dados serão utilizados para acompanhar o desenvolvimento e comparar
+                        futuramente com o peso ideal, auxiliando no monitoramento.
+                    </p>
+                    <form action="#" method="post" id="formCadastro">
+                        <div class="input-container">
+                            <input type="text" id="peso" name="peso" required="">
+                            <label for="input" class="label">Peso (Kg)</label>
+                            <div class="underline"></div>
+                        </div>
+                        <div class="input-container doubleAge">
+                            <div>
+                                <input type="text" id="idade" name="idade" required="">
+                                <label for="input" class="label">Idade</label>
+                                <div class="underline"></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-cadastrar"><span>Cadastrar</span></button>
+
+                    </form>
+                </div>
+                <div class="historico" style="display:none;">
+                    <div class="mananger">
+
+
+                    </div>
+                </div>
+                <div class="Analise" style="display:none;">
+                    <canvas id="graficoCrescimento" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="../JS/curveBaby.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>blog-noticias</title>
+  <link rel="stylesheet" href="css/artigos.css">
+</head>
+<body>
+  <main class="container">
+    <section class="posts">
+      
+    </section>
+
+    <aside class="sidebar">
+      <section class="filter">
+        <h3>Categorias</h3>
+        <label><input type="checkbox"> Dicas</label><br>
+        <label><input type="checkbox"> Consultas</label><br>
+        <label><input type="checkbox"> Novidades</label><br>
+       
+        <h3>Para</h3>
+        <label><input type="checkbox"> Mães</label><br>
+        <label><input type="checkbox"> Pais</label><br>
+        <label><input type="checkbox"> Recem nascidos</label><br>
+
+        <p>De:<br><input type="date"></p>
+        <p>Até:<br><input type="date"></p>
+      </section>
+
+      <section class="recent-posts">
+        <a href="criar-post.html" class="btn novo-post">Criar novo post</a>
+      </section>
+    </aside>
+  </main>
+  <script>
+  async function carregarPosts() {
+    try {
+      const response = await fetch('http://localhost:3000/obter-posts');
+      const posts = await response.json();
+
+      const postsContainer = document.querySelector('.posts');
+
+      posts.forEach(post => {
+        const article = document.createElement('article');
+        article.classList.add('post');
+        article.innerHTML = `
+          <img src="${post.imagem}" alt="${post.titulo}">
+          <p>${post.conteudo}</p>
+          <a href="#" class="btn">Ler mais</a>
+        `;
+        postsContainer.appendChild(article);
+      });
+    } catch (error) {
+      console.error('Erro ao carregar posts:', error);
+    }
+  }
+
+  carregarPosts();
+</script>
+</body>
+</html>
