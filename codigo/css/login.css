@@ -137,11 +137,38 @@ main{
 
 }
 
-.choice{
+.choice {
     display: flex;
-    align-items: center;
+       align-items: center;
     justify-content: space-around;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.choice div {
+    padding: 0.75rem 2rem;
+    border-bottom:  solid var(--principal);
+    border-radius: 8px 8px 0px 0px;
+    background: white;
+    color: var(--principal);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    user-select: none;
+}
+
+.choice div:hover {
+    background-color:var(--principal);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.choice div:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .formLogin {
