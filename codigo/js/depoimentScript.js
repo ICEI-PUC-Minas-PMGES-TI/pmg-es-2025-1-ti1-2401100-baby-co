@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 const usuario = JSON.parse(sessionStorage.getItem('usuario'));
 
+// mmostra o dropdown do user caso esteja logado
 if (menuList) {
   menuList.innerHTML = '';
   data.menu.forEach(item => {
