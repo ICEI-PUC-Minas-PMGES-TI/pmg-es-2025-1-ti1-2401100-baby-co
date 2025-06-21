@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, {
           acMenu: 'Lembretes',
           link: '/codigo/Ruan/html/index.html'
+        },{
+          acMenu: 'Login',
+          link: '../html/login.html'
         }
       ],
     banner: {
