@@ -1,38 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css" />
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=
+        , initial-scale=1.0">
+        <link rel="stylesheet" href="../css/login.css" />
+        <title>Document</title>
+    </head>
 
-<body>
-    <header>
-        <img src="Images/logo.png" alt="Logo" />
-        <ul>
-            <li>Início</li>
-            <li>Nutrição</li>
-            <li>Blogs</li>
-        </ul>
-        <ul>
-            <li><i class="fas fa-baby"></i></li>
-            <li>
-                <label class="switch">
-                    <input type="checkbox" id="darkModeToggle" />
-                    <span class="slider round"></span>
-                </label>
-            </li>
-        </ul>
-    </header>
-    <div class="mananger-main">
-        <main>
-            <label for="">teste</label>
-        </main>
-    </div>
+    <body>
+        <header>
+            <img src="Images/logo.png" alt="Logo" />
+            <ul>
+                <li>Início</li>
+                <li>Nutrição</li>
+                <li>Blogs</li>
+            </ul>
+            <ul>
+                <li><i class="fas fa-baby"></i></li>
+                <li>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle" />
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+            </ul>
+        </header>
+        <div class="mananger-main">
+            <main>
+                <div class="choice">
+                    <div><label for="">LOGIN</label></div>
+                    <div><label for="">CADASTRAR</label></div>
+                </div>
+                <div class="forms-login">
+                    <form id="formLogin" method="POST" class="formLogin">
+                        <h1>Login</h1>
+                        <p>Digite os seus dados de acesso no campo abaixo.</p>
 
-</body>
+                        <label for="loginEmail">E-mail</label>
+                        <input type="email" id="loginEmail" placeholder="Digite seu e-mail" required />
 
-</html>
+                        <label for="loginSenha">Senha</label>
+                        <input type="password" id="loginSenha" placeholder="Digite sua senha" required />
+
+                        <a href="#" id="linkParaCadastro">Ainda não possuo uma conta</a>
+
+                        <input type="submit" value="Entrar" class="btn" />
+                    </form>
+                </div>
+                <div class="forms-Cadastro">
+                    <form id="formCadastro" method="POST" class="formLogin" style="display: none;">
+                        <h1>Cadastro</h1>
+                        <p>Preencha os campos abaixo para criar sua conta.</p>
+
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="Digite seu nome" required />
+
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="Digite seu e-mail" required />
+
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" placeholder="Digite sua senha" required />
+
+                        <label for="confirmarSenha">Confirmar senha</label>
+                        <label id="erroSenha" class="confirma-senha">As senhas não coincidem</label>
+                        <input type="password" id="confirmarSenha" placeholder="Confirme sua senha" required />
+                        <a href="#" id="linkParaLogin">Já possuo conta</a>
+
+                        <input type="submit" value="Criar Conta" class="btn" />
+                    </form>
+                </div>
+            </main>
+        </div>
+
+    </body>
+
+    </html>
