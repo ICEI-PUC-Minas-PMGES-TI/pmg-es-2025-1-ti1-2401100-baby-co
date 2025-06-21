@@ -1,0 +1,95 @@
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+          font-family: "Poppins", sans-serif;
+
+    }
+
+    header {
+      background-color: #004d40;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+   .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.bebe-card {
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  width: 250px;       
+  height: 180px;      
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+    .bebe-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .bebe-card h3 {
+      margin: 10px 0;
+      font-size: 1.3em;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    .bebe-card p {
+      margin: 4px 0;
+      font-size: 0.95em;
+    }
+
+    .delete-btn {
+      margin-top: 12px;
+      cursor: pointer;
+      font-size: 20px;
+      color: #666;
+    }
+
+    .delete-btn:hover {
+      color: #e53935;
+    }
+
+    .adicionar-btn {
+            background-color: #005045;
+      color: white;
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 30px auto;
+      display: block;
+      transition: background 0.2s;
+    }
+
+    .adicionar-btn:hover {
+            background-color: #107568;
+    }
+
+
+    

@@ -38,7 +38,7 @@ document.getElementById("form").addEventListener("submit", function (e) {
     sangue
   };
 
-  fetch("http://localhost:5000/bebes", {
+  fetch("http://localhost:3000/bebes", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
