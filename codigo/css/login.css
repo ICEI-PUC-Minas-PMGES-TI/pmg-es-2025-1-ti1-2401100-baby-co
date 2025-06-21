@@ -34,18 +34,20 @@ header ul {
     gap: 20px;
 }
 
-header ul li {
+header ul a {
     cursor: pointer;
+    color: #fff;
+    text-decoration: none;
 }
 
-/* Underline animado no menu principal */
-header ul:first-of-type li {
+
+header ul:first-of-type a {
     position: relative;
     padding: 5px 0;
     transition: color 0.3s ease;
 }
 
-header ul:first-of-type li::after {
+header ul:first-of-type a::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -56,11 +58,11 @@ header ul:first-of-type li::after {
     transition: width 0.3s ease;
 }
 
-header ul:first-of-type li:hover {
+header ul:first-of-type a:hover {
     color: #FFFFFF;
 }
 
-header ul:first-of-type li:hover::after {
+header ul:first-of-type a:hover::after {
     width: 100%;
 }
 
