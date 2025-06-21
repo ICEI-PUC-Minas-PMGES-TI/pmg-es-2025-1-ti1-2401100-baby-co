@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, {
           acMenu: 'Lembretes',
           link: '/codigo/Ruan/html/index.html'
-        },{
+        }, {
           acMenu: 'Login',
           link: '../html/login.html'
         }
@@ -95,4 +95,47 @@ document.addEventListener('DOMContentLoaded', () => {
       gallery.appendChild(el);
     });
   }
+const usuario = JSON.parse(sessionStorage.getItem('usuario'));
+
+if (menuList) {
+  menuList.innerHTML = '';
+  data.menu.forEach(item => {
+    const li = document.createElement('li');
+
+    // Se for o item Login e houver usuário logado, substitui por dropdown
+    if (item.acMenu === 'Login' && usuario) {
+      li.innerHTML = `
+        <div class="dropdown-wrapper">
+          <a class="dropdown-trigger">Olá, ${usuario.nome}</a>
+          <div class="dropdown-content">
+            <div class="dropdown-item" data-link="perfil.html">Meu Perfil</div>
+            <div class="dropdown-item" id="logoutBtn">Sair</div>
+          </div>
+        </div>
+      `;
+    } else {
+      const a = document.createElement('a');
+      a.textContent = item.acMenu;
+      a.href = item.link;
+      li.appendChild(a);
+    }
+
+    menuList.appendChild(li);
+  });
+
+  // Evento logout
+  document.getElementById('logoutBtn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    sessionStorage.removeItem('usuario');
+    location.reload();
+  });
+
+  // Eventos de clique para redirecionar dropdown
+  document.querySelectorAll('.dropdown-item[data-link]')?.forEach(item => {
+    item.addEventListener('click', () => {
+      window.location.href = item.dataset.link;
+    });
+  });
+}
+
 });

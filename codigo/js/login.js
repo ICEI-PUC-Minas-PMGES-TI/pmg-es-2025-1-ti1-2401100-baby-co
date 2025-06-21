@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (usuarios.length === 1) {
         const usuario = usuarios[0];
-        sessionStorage.setItem("usuarioId", usuario.id);
+        sessionStorage.setItem("usuario", JSON.stringify(usuario));
         alert(`Bem-vindo, ${usuario.nome}`);
    
         window.location.href = "home.html";
