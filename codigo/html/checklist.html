@@ -1,64 +1,62 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Checklist</title>
-<link rel="stylesheet" href="../css/checklistStyles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-</head>
-<body>
-  <header>
-    <img src="../public/assets/images/Logo (3).png" alt="Logo do site"/>
-    <ul>
-      <li>Início</li>
-      <li>Nutrição</li>
-      <li>Blogs</li>
-    </ul>
-    <ul>
-      <li><i class="fas fa-baby"></i></li>
-      <li>
-        <label class="switch">
-          <input type="checkbox" id="darkModeToggle"/>
-          <span class="slider round"></span>
-        </label>
-      </li>
-    </ul>
-  </header>
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Checklist</title>
+    <link rel="stylesheet" href="../css/checklistStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  </head>
+  <body>
+    <header>
+      <img src="assets/Logo.png" alt="Logo do site"/>
+      <ul>
+        <li>Início</li>
+        <li>Nutrição</li>
+        <li>Blogs</li>
+      </ul>
+      <ul>
+        <li><i class="fas fa-baby"></i></li>
+        <li>
+          <label class="switch">
+            <input type="checkbox" id="darkModeToggle"/>
+            <span class="slider round"></span>
+          </label>
+        </li>
+      </ul>
+    </header>
 
-  <main class="container-checklist">
-    <h2>Checklist</h2>
+    <main class="container-checklist">
+      <h2>Checklist</h2>
 
-    <!-- Filtro de Tags -->
-    <div id="filtros" class="filtro-tags">
-      <button class="tag-btn ativo" data-tag="todos">Todos</button>
-      <button class="tag-btn" data-tag="medico">Médico</button>
-      <button class="tag-btn" data-tag="alimentacao">Alimentação</button>
-      <button class="tag-btn" data-tag="acessorios">Acessórios</button>
-      <button class="tag-btn" data-tag="outros">Outros</button>
-    </div>
+      <div id="filtros" class="filtro-tags">
+        <button class="tag-btn ativo" data-tag="todos">Todos</button>
+        <button class="tag-btn" data-tag="medico">Médico</button>
+        <button class="tag-btn" data-tag="alimentacao">Alimentação</button>
+        <button class="tag-btn" data-tag="acessorios">Acessórios</button>
+        <button class="tag-btn" data-tag="outros">Outros</button>
+      </div>
 
-    <ul id="lista"></ul>
+      <ul id="lista"></ul>
 
-    <hr/>
+      <hr/>
 
-    <!-- Formulário de Adição -->
-    <h4>Adicionar Item</h4>
-    <input type="text" id="inputItem" placeholder="Digite o item" />
+      <h4>Adicionar Item</h4>
+      <input type="text" id="inputItem" placeholder="Digite o item" />
 
-    <div class="tag-selector">
-      <button class="tag-btn" data-tag="medico">Médico</button>
-      <button class="tag-btn" data-tag="alimentacao">Alimentação</button>
-      <button class="tag-btn" data-tag="acessorios">Acessórios</button>
-      <button class="tag-btn" data-tag="outros">Outros</button>
-    </div>
+      <div class="tag-selector">
+        <button class="tag-btn" data-tag="medico">Médico</button>
+        <button class="tag-btn" data-tag="alimentacao">Alimentação</button>
+        <button class="tag-btn" data-tag="acessorios">Acessórios</button>
+        <button class="tag-btn" data-tag="outros">Outros</button>
+      </div>
 
-    <div class="form-actions">
-      <button class="salvar-btn" id="btnSalvar">Salvar</button>
-      <button class="cancelar-btn" id="btnCancelar">Cancelar</button>
-    </div>
-  </main>
+      <div class="form-actions">
+        <button class="salvar-btn" id="btnSalvar">Salvar</button>
+        <button class="cancelar-btn" id="btnCancelar">Cancelar</button>
+      </div>
+    </main>
 
-<script src="../js/checklist.js"></script>
-</body>
-</html>
+  <script src="../js/checklist.js"></script>
+  </body>
+  </html>
