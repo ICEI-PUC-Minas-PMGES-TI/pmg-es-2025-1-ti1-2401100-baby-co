@@ -7,23 +7,27 @@ license: CC-BY-4.0
 authors:
   - family-names: Ribas
     given-names: Mateus
+    affiliation: PUC Minas
   - family-names: Fortini
     given-names: André
+    affiliation: PUC Minas
   - family-names: Felipe
     given-names: Gabriel
+    affiliation: PUC Minas
   - family-names: Alberto
     given-names: Ruan
+    affiliation: PUC Minas
   - family-names: D'assunçao
     given-names: Davi
+    affiliation: PUC Minas
   - family-names: Fernandes
     given-names: Vinicius
+    affiliation: PUC Minas
   - family-names: Horta
-    given-names: Guilherme
-    name-suffix: Diego Augusto
+    given-names: Guilherme Diego Augusto
     affiliation: PUC Minas
   - family-names: Esteves
-    given-names: Marcelo
-    name-suffix: Michele Hanne
+    given-names: Marcelo Michele Hanne
     affiliation: PUC Minas
 
 keywords:
@@ -33,4 +37,4 @@ keywords:
   - PUC Minas
   - JavaScript
 
-repository-code: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti1-2401100-baby-co.git" 
+repository-code: "https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti1-2401100-baby-co.git"
