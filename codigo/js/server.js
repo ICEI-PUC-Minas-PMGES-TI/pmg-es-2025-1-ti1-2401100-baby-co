@@ -4,6 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+app.use(express.static(path.join(__dirname, '../html')));
 const PORT = 3000;
 app.use(cors());
 app.use(bodyParser.json());
