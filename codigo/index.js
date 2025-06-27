@@ -13,7 +13,7 @@ server.use((_req, res, next) => {
 
 server.use(middlewares);
 server.use(router);
-
+//salvando teste
 server.listen(3000, () => {
   console.log('JSON Server is running em http://localhost:3000');
 });
