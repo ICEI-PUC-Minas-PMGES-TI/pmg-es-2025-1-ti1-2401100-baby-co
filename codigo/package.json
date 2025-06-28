@@ -4,7 +4,8 @@
   "description": "Laboratório de aplicação Web com backend baseado no JSON Server",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "server-run": "node js/server.js"
   },
   "keywords": [],
   "author": "Rommel Vieira Carneiro",
