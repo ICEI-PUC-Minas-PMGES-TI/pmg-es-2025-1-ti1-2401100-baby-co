@@ -296,7 +296,7 @@ O site foi estruturado de forma intuitiva, com foco na experiência do usuário 
 
 O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução. ⚠️ EXEMPLO ⚠️
 
-[![Vídeo do projeto](images/VIDEOTIAW.mp4)](https://youtu.be/2fgEFilhvKo)
+[![Vídeo do projeto](images/video.png)](https://youtu.be/2fgEFilhvKo)
 
 ## Funcionalidades
 
