@@ -9,7 +9,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // configs de middlewares do express
-app.use(cors());
+app.use(cors(
+  {
+    origin: '*', 
+    methods: 'GET,POST,PUT,PATCH,DELETE,OPTIONS', 
+    allowedHeaders: 'Content-Type, Authorization' 
+  }
+));
 app.use(bodyParser.json());
 
 // path do db
