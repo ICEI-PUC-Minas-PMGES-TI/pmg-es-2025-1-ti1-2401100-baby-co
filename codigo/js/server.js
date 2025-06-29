@@ -29,7 +29,7 @@ app.post('/salvar-post', (req, res) => {
 
 // usando node express para servir os arquivos estáticos do projeto
 app.use('/css', express.static(path.join(__dirname, '../css')));
-app.use('/js', express.static(path.join(__dirname))); // scripts JS
+app.use('/js', express.static(path.join(__dirname))); 
 app.use('/html', express.static(path.join(__dirname, '../html')));
 app.use(express.static(path.join(__dirname, '../public')));
 
