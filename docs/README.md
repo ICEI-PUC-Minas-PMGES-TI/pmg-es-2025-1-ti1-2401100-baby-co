@@ -206,41 +206,91 @@ Detalhes sobre a organização do grupo e o ferramental empregado.
 
 Relação de ferramentas empregadas pelo grupo durante o projeto.
 
-| Ambiente                    | Plataforma | Link de acesso                                     |
-| --------------------------- | ---------- | -------------------------------------------------- |
-| Processo de Design Thinking | Miro       | https://miro.com/XXXXXXX ⚠️ EXEMPLO ⚠️        |
-| Repositório de código     | GitHub     | https://github.com/XXXXXXX ⚠️ EXEMPLO ⚠️      |
-| Hospedagem do site          | Render     | https://site.render.com/XXXXXXX ⚠️ EXEMPLO ⚠️ |
-| Protótipo Interativo       | MarvelApp  | https://marvelapp.com/XXXXXXX ⚠️ EXEMPLO ⚠️   |
+| Ambiente                    | Plataforma | Link de acesso                                                                                |
+| --------------------------- | ---------- | ----------------------------------------------------------------------------------------------|
+| Processo de Design Thinking | Miro       | https://miro.com/app/board/uXjVIaSTdQ8=/                                                      |
+| Repositório de código       | GitHub     | https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti1-2401100-baby-co.git              |
+| Hospedagem do site          | Render     | https://pmg-es-2025-1-ti1-2401100-baby-co.onrender.com/html/reminders.html                    |
+| Protótipo Interativo        | Figma      | https://www.figma.com/design/6z3yxJdhkC3Wv5rZuHi6Ql/Untitled?node-id=0-1&t=E3GRnGWp3aljy42P-0 |
 |                             |            |                                                    |
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Liste as ferramentas empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível. Inclua itens como: (1) Editor de código, (2) )ferramentas de comunicação, (3) )ferramentas de diagramação, (4) )plataformas de hospedagem, entre outras.
+
+Editor de Código – Visual Studio Code : Escolhido por ser gratuito, leve e altamente personalizável, com suporte a HTML, CSS, JavaScript e integração com GitHub. Permitiu maior produtividade no desenvolvimento front-end.
+
+Ferramentas de Comunicação – Discord e WhatsApp: O WhatsApp foi utilizado para comunicações rápidas do dia a dia, enquanto o Discord foi empregado para reuniões síncronas, alinhamento de ideias e validações em grupo.
+
+Ferramentas de Diagramação – Miro: Utilizado no processo de Design Thinking para a construção de mapas de empatia, jornada do usuário e brainstorming. Sua natureza colaborativa em tempo real facilitou a participação de todos os membros.
+
+Repositório de Código – GitHub: Fundamental para o versionamento de código e controle de alterações. A colaboração via branches e pull requests assegurou organização e rastreabilidade durante o desenvolvimento.
+
+Hospedagem do Site – Render: Plataforma gratuita e de fácil uso para deploy automático de aplicações web. A escolha pela Render se deu pela sua integração contínua com repositórios GitHub, o que facilitou a atualização do site em cada nova versão.
+
+Protótipo Interativo – Figma: Ferramenta baseada na web utilizada para criação dos protótipos navegáveis. Permite colaboração em tempo real e simulação da experiência do usuário, sendo essencial para a fase de validação e testes de usabilidade.
 
 ## Gerenciamento do Projeto
 
-Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).
+Durante o desenvolvimento do projeto, o grupo adotou práticas de metodologias ágeis, com foco nos princípios do Scrum e do Design Thinking, para garantir uma organização eficiente do trabalho em equipe, desde a concepção da ideia até a entrega do produto final.
 
-![Exemplo de Kanban](images/exemplo-kanban.png)
+O grupo utilizou um quadro Kanban, estruturado nas seguintes colunas:
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Nesta parte do documento, você deve apresentar  o processo de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a gestão de configuração do projeto via GitHub.
->
-> Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
->
-> **Orientações**:
->
-> - [Sobre Projects - GitHub Docs](https://docs.github.com/pt/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-> - [Gestão de projetos com GitHub | balta.io](https://balta.io/blog/gestao-de-projetos-com-github)
-> - [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+-Recursos: Tarefas reutilizáveis e templates que podem ser aplicados em mais de uma etapa do projeto.
+
+-Backlog: Lista completa de tarefas a serem desenvolvidas ao longo do projeto.
+
+-Para fazer: Tarefas selecionadas do backlog para a Sprint atual, priorizadas para execução.
+
+-Fazendo: Tarefas em andamento, ou seja, já iniciadas por algum integrante do grupo.
+
+-Controle de qualidade: Após finalizadas, as tarefas são verificadas e validadas antes de serem consideradas prontas.
+
+-Feito: Tarefas aprovadas na checagem de qualidade e consideradas entregues.
+
+-Bloqueado: Tarefas que não puderam ser concluídas devido a impedimentos técnicos ou dependências externas.
+
+Essa estrutura de Kanban foi implementada para facilitar o acompanhamento das atividades e o progresso do time, garantindo visibilidade e colaboração contínua entre os membros.
+
+
+Ferramenta de suporte:
+
+-GitHub Projects foi utilizado como principal ferramenta de controle de tarefas, integrando diretamente com o repositório do projeto. Essa integração permitiu o rastreamento de issues, tarefas concluídas, responsáveis e prazos.
+
+-O processo de Design Thinking foi aplicado nas fases iniciais do projeto, com uso da ferramenta Miro para construção colaborativa de mapas de empatia, definição de personas, jornada do usuário e ideação de soluções.
+
+-O gerenciamento de código e versionamento foi realizado através do Git, com uso intensivo de branches, commits frequentes, pull requests e ações de revisão de código no GitHub.
+
+Essa combinação de práticas e ferramentas garantiu agilidade, organização e comunicação eficaz entre os membros da equipe ao longo de todas as etapas do projeto.
 
 # Solução Implementada
 
-Esta seção apresenta todos os detalhes da solução criada no projeto.
+A solução desenvolvida pelo grupo consiste em um site de apoio para pais e mães, com o objetivo de facilitar a organização e o acompanhamento do desenvolvimento dos bebês, reunindo em um só lugar funcionalidades essenciais para o dia a dia das famílias.
+
+O sistema foi desenvolvido em formato web e é composto por diversas telas, cada uma com uma função específica, atribuída a um integrante do grupo. A seguir, são listadas as principais telas implementadas:
+
+-Tela Inicial :
+Apresenta uma visão geral do site, com acesso rápido às principais seções, introdução ao propósito da plataforma e navegação facilitada.
+
+-Tela de Cadastro de Bebê :
+Permite que os usuários cadastrem os dados do bebê, como nome, data de nascimento e outras informações relevantes para o sistema.
+
+-Tela de Listagem e Informações do Bebê :
+Unificadas por sua simplicidade, essas telas exibem os dados dos bebês cadastrados e suas respectivas informações detalhadas.
+
+-Tela de Checklist :
+Funcionalidade voltada à criação de listas de tarefas ou itens relacionados ao cuidado com o bebê, auxiliando na organização da rotina.
+
+-Tela de Gráfico :
+Responsável por apresentar dados visuais sobre o crescimento e desenvolvimento do bebê, com gráficos baseados em informações cadastradas.
+
+-Tela de Lembretes :
+Permite aos usuários agendar lembretes importantes, como consultas médicas, vacinações e outros compromissos relacionados ao bebê.
+
+-Tela de Blog :
+Espaço dedicado a artigos, dicas e conteúdos voltados à maternidade, paternidade e cuidados com bebês.
+
+-Tela de Nutrição : 
+Exibe orientações sobre alimentação infantil, incluindo fases da introdução alimentar e recomendações nutricionais.
+
+O site foi estruturado de forma intuitiva, com foco na experiência do usuário e facilidade de navegação. Todas as telas foram integradas em um único sistema hospedado online, acessível em diferentes dispositivos.
 
 ## Vídeo do Projeto
 
@@ -258,62 +308,454 @@ O vídeo a seguir traz uma apresentação do problema que a equipe está tratand
 
 Esta seção apresenta as funcionalidades da solução.Info
 
-##### Funcionalidade 1 - Cadastro de Contatos ⚠️ EXEMPLO ⚠️
+##### Funcionalidade 1 - Cadastro de bebês
 
-Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
+Permite a inclusão, leitura, alteração e exclusão de bebês para o sistema
 
-* **Estrutura de dados:** [Contatos](#ti_ed_contatos)
+* **Estrutura de dados:** [Bebes](#ti_ed_bebes)
 * **Instruções de acesso:**
   * Abra o site e efetue o login
-  * Acesse o menu principal e escolha a opção Cadastros
-  * Em seguida, escolha a opção Contatos
+  * Acesse o menu principal e escolha a opção bebês
+  * Em seguida, informe os dados do bebe a ser cadastrado.
 * **Tela da funcionalidade**:
 
-![Tela de Funcionalidade](images/exemplo-funcionalidade.png)
+![Tela de Funcionalidade](images/cadbebe.jpg)
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários quanto aos administradores da solução.
->
-> Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2) Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.
+##### Funcionalidade 2 - Listagem de bebês
+
+Permite a listagem de bebês cadastrados.
+
+* **Estrutura de dados:** [Bebes](#ti_ed_bebes)
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção bebês
+  * Em seguida cadastre seu bebê, caso não tenha um bebe cadastrado.
+  *Clique em "Ver bebês cadastrados"
+* **Tela da funcionalidade**:
+
+![Tela de Funcionalidade](images/listagembebe.jpg)
+
+
+##### Funcionalidade 3 - Checklist
+Permite a inclusão, leitura, alteração e exclusão de lembretes.
+
+* **Estrutura de dados:** [lembretes](#ti_ed_lembretes)
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção lembretes
+* **Tela da funcionalidade**:
+
+![Tela de Funcionalidade](images/lembretes.jpg)
+
+
+##### Funcionalidade 4 - Tela de graficos
+Permite conferir a análise corporativa com base nas medidas do bebê.
+
+* **Estrutura de dados:** [dadosBebesIdeais e dadosBebe](#ti_ed_lembretes)
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção bebes 
+  *Clique em "ver  bebês cadastrados"
+*Clique em "Graficos" no menu superior
+
+* **Tela da funcionalidade**:
+
+![Tela de Funcionalidade](images/graficos.jpg)
+
+
+##### Funcionalidade 5 - Tela de blog
+Espaço dedicado a artigos, dicas e conteúdos voltados à maternidade, paternidade e cuidados com bebês.
+
+* **Estrutura de dados:** [comments, likes e depoimentos](#ti_ed_comments)
+* **Instruções de acesso:**
+  * Abra o site e efetue o login
+  * Acesse o menu principal e escolha a opção blogs
+
+
+* **Tela da funcionalidade**:
+
+![Tela de Funcionalidade](images/graficos.jpg)
+
+
 
 ## Estruturas de Dados
 
 Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.Info
 
-##### Estrutura de Dados - Contatos   ⚠️ EXEMPLO ⚠️
+##### Estrutura de Dados - Checklist   
 
-Contatos da aplicação
-
+Dados presentes na checklist
 ```json
-  {
-    "id": 1,
-    "nome": "Leanne Graham",
-    "cidade": "Belo Horizonte",
-    "categoria": "amigos",
-    "email": "Sincere@april.biz",
-    "telefone": "1-770-736-8031",
-    "website": "hildegard.org"
-  }
+{
+      "id": "1",
+      "texto": "Levar bebê ao médico",
+      "tag": "medico",
+      "concluido": false
+    },
+    {
+      "id": "2",
+      "texto": "Comprar fraldas",
+      "tag": "acessorios",
+      "concluido": false
+    },
+    {
+      "id": "f538",
+      "texto": "aa",
+      "tag": "medico",
+      "concluido": false
+    },
+    {
+      "id": "df76",
+      "texto": "aaa",
+      "tag": "medico",
+      "concluido": false
+    }
   
 ```
 
-##### Estrutura de Dados - Usuários  ⚠️ EXEMPLO ⚠️
+##### Estrutura de Dados - Usuários  
 
 Registro dos usuários do sistema utilizados para login e para o perfil do sistema
 
 ```json
-  {
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    email: "admin@abc.com",
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    login: "admin",
-    nome: "Administrador do Sistema",
-    senha: "123"
-  }
+{
+      "id": "1",
+      "login": "admin",
+      "senha": "123",
+      "nome": "Administrador do Sistema",
+      "email": "admin@abc.com"
+    },
+    {
+      "id": "2",
+      "login": "user",
+      "senha": "123",
+      "nome": "Usuario Comum",
+      "email": "user@abc.com"
+    },
+    {
+      "id": "3",
+      "login": "rommel",
+      "senha": "123",
+      "nome": "Rommel",
+      "email": "rommel@gmail.com"
+    },
+    {
+      "id": "5NvPOV4",
+      "nome": "teste",
+      "email": "guilhermehdias2007@gmail.com",
+      "senha": "guizin"
+    },
+    {
+      "nome": "andre",
+      "email": "andre@email.com",
+      "senha": "123",
+      "id": "yOYtdRn"
+    }
+```
+
+##### Estrutura de Dados - Bebes  
+
+Registro dos bebes do sistema.
+```json
+{
+      "id": "UoYqRam",
+      "nome": "daniel",
+      "nascimento": "10/09/2023",
+      "sexo": "masculino",
+      "peso": "23",
+      "altura": "50",
+      "sangue": "AB+"
+    },
+    {
+      "nome": "patricia",
+      "nascimento": "10/09/2023",
+      "sexo": "feminino",
+      "peso": "10",
+      "altura": "60",
+      "sangue": "B-",
+      "id": "Htno7qg"
+    }
 ```
 
 
+
+##### Estrutura de Dados - lembretes  
+
+Registro dos lembretes do sistema.
+```json
+{
+      "id": "5",
+      "titulo": "Cafeína Infantil",
+      "categoria": "Medicamentos",
+      "descricao": "Cafeína para criança",
+      "data": "2025-05-18",
+      "status": "ativo"
+    },
+    {
+      "id": "6",
+      "titulo": "Médico 1",
+      "categoria": "Consultas",
+      "descricao": "Ir ao médico",
+      "data": "2025-05-14",
+      "status": "ativo"
+    },
+    {
+      "id": "7",
+      "titulo": "Não esquecer presente",
+      "categoria": "Outros",
+      "descricao": "Presente para o amigo",
+      "data": "2025-05-05",
+      "status": "ativo"
+    },
+    {
+      "titulo": "Comprar Leite",
+      "categoria": "Outros",
+      "descricao": "Leite da marca que não dá alergia",
+      "data": "2025-06-30",
+      "status": "ativo",
+      "id": "0z9DbQM"
+    },
+    {
+      "titulo": "Sim",
+      "categoria": "Vacinas",
+      "descricao": "sim",
+      "data": "2025-06-23",
+      "status": "ativo",
+      "id": "KI_j0nT"
+    }
+```
+
+
+##### Estrutura de Dados - Pais  
+
+Registro dos pais do sistema.
+```json
+{
+      "id": "1",
+      "mae": "mae",
+      "nascimento_mae": "2025-05-06",
+      "pai": "pai",
+      "nascimento_pai": "2025-05-21"
+    },
+    {
+      "id": "2",
+      "mae": "Monica",
+      "nascimento_mae": "2025-05-01",
+      "pai": "Marcelo",
+      "nascimento_pai": "2025-05-01"
+    }
+```
+
+
+##### Estrutura de Dados - dadosBebesIdeais  
+
+Registro dos dados do Bebe do Ideal do sistema.
+```json
+{
+      "id": "i1",
+      "peso": 3.3,
+      "idade": 0
+    },
+    {
+      "id": "i2",
+      "peso": 4.5,
+      "idade": 1
+    },
+    {
+      "id": "i3",
+      "peso": 5.6,
+      "idade": 2
+    },
+    {
+      "id": "i4",
+      "peso": 6.4,
+      "idade": 3
+    },
+    {
+      "id": "i5",
+      "peso": 7,
+      "idade": 4
+    },
+    {
+      "id": "i6",
+      "peso": 7.5,
+      "idade": 5
+    },
+    {
+      "id": "i7",
+      "peso": 8,
+      "idade": 6
+    },
+    {
+      "id": "i8",
+      "peso": 8.4,
+      "idade": 7
+    },
+    {
+      "id": "i9",
+      "peso": 8.6,
+      "idade": 8
+    }
+```
+
+##### Estrutura de Dados - dadosbebes  
+
+Registro dos dados do Bebe do sistema.
+```json
+{
+      "id": "m1",
+      "peso": 2.9,
+      "idade": 0
+    },
+    {
+      "id": "m2",
+      "peso": 3.8,
+      "idade": 1
+    },
+    {
+      "id": "m3",
+      "peso": 5.2,
+      "idade": 2
+    },
+    {
+      "id": "m4",
+      "peso": 6.1,
+      "idade": 3
+    },
+    {
+      "id": "m5",
+      "peso": 6.9,
+      "idade": 4
+    },
+    {
+      "id": "m6",
+      "peso": 7.8,
+      "idade": 5
+    },
+    {
+      "id": "m7",
+      "peso": 8.3,
+      "idade": 6
+    },
+    {
+      "id": "m8",
+      "peso": 8.9,
+      "idade": 7
+    },
+    {
+      "id": "m9",
+      "peso": 9.5,
+      "idade": 8
+    },
+    {
+      "peso": 12,
+      "idade": 10,
+      "id": "OXPtq91"
+    }
+```
+##### Estrutura de Dados - servicos  
+
+Registro dos servicos do sistema.
+```json
+{
+      "id": "c71c",
+      "titulo": "Sono",
+      "descricao": "Acompanhe os horários e duração do sono. Descubra padrões e melhore a rotina do seu bebê com análises personalizadas."
+    },
+    {
+      "id": "e3f5",
+      "titulo": "Alimentação",
+      "descricao": "Registre amamentações, fórmulas e introdução alimentar. Visualize históricos, padrões e gere relatórios para consultas médicas."
+    },
+    {
+      "id": "d0b9",
+      "titulo": "Compartilhamento",
+      "descricao": "Compartilhe informações com outros cuidadores, babás ou familiares para manter todos informados."
+    },
+    {
+      "id": "ca4b",
+      "titulo": "Lembretes",
+      "descricao": "Configure alertas para medicações, consultas médicas e outras atividades importantes para o seu bebê."
+    },
+    {
+      "id": "ec95",
+      "titulo": "Vacinas",
+      "descricao": "Registre o calendário de vacinas do seu filho"
+    }
+```
+
+##### Estrutura de Dados - depoimentos  
+
+Registro dos depoimentos do sistema.
+```json
+{
+      "id": "60c4",
+      "texto": "O Baby Connect mudou minha vida como mãe de primeira viagem. Consigo registrar todas as atividades do meu bebê e ainda compartilhar com meu marido e a babá.",
+      "imagem": "usuario1.png"
+    },
+    {
+      "id": "a980",
+      "texto": "Como mãe solo, este app me ajuda a manter a sanidade. Acompanho horários de sono, alimentação e planejo melhor meu dia com meu bebê.",
+      "imagem": "usuario2.png"
+    },
+    {
+      "id": "06a0",
+      "texto": "Testando",
+      "imagem": "usuario1.png"
+    },
+    {
+      "id": "5bf4",
+      "texto": "Salvando e testando",
+      "imagem": "usuario1.png"
+    }
+```
+
+
+##### Estrutura de Dados - comments  
+
+Registro dos depoimentos do sistema.
+```json
+{
+      "id": "d0da",
+      "itemId": "60c4",
+      "user": "João",
+      "text": "Aplicativo maravilhoso!",
+      "timestamp": "2025-06-01T10:15:00"
+    },
+    {
+      "id": "b742",
+      "itemId": "c71c",
+      "user": "Ana",
+      "text": "Muito útil para acompanhar o sono.",
+      "timestamp": "2025-06-01T11:00:00"
+    },
+    {
+      "id": "5e78",
+      "itemId": "60c4",
+      "user": "GG",
+      "text": "Testando salvamento no novo banco",
+      "timestamp": "2025-06-19T20:18:47.252Z"
+    }
+```
+
+
+##### Estrutura de Dados - likes  
+
+Registro dos likes do sistema.
+```json
+{
+      "id": "0a53",
+      "itemId": "60c4",
+      "userId": "user-abc123",
+      "timestamp": "2025-06-01T09:00:00"
+    },
+    {
+      "id": "087e",
+      "itemId": "c71c",
+      "userId": "user-def456",
+      "timestamp": "2025-06-01T09:05:00"
+    }
+```
 >
 > * [JSON Introduction](https://www.w3schools.com/js/js_json_intro.asp)
 > * [Trabalhando com JSON - Aprendendo desenvolvimento web | MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON)
@@ -332,21 +774,20 @@ Registro dos usuários do sistema utilizados para login e para o perfil do siste
 * jQuery - [http://www.jquery.com/](http://www.jquery.com/) 
 * Bootstrap 4 - [http://getbootstrap.com/](http://getbootstrap.com/) 
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1) Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas para acesso a dados, serviços, etc.
 
-# Referências
+## Referências
 
-As referências utilizadas no trabalho foram:
+- **BRASIL. Ministério da Saúde.** *Caderneta da Criança – seis edições*. Brasília: Ministério da Saúde, 2023.  
+  Disponível em: [https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/caderneta](https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/caderneta). Acesso em: 29 jun. 2025.  
+  Fonte adicional: [portaldeboaspraticas.iff.fiocruz.br](https://portaldeboaspraticas.iff.fiocruz.br)
 
-* SOBRENOME, Nome do autor. Título da obra. 8. ed. Cidade: Editora, 2000. 287 p ⚠️ EXEMPLO ⚠️
+- **BRASIL. Ministério da Saúde.** *Guia Alimentar para Crianças Brasileiras Menores de 2 Anos*. 2. ed., Brasília: Ministério da Saúde, 2019.  
+  Disponível em: [https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_criancas_menores_2anos.pdf](https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_criancas_menores_2anos.pdf). Acesso em: 29 jun. 2025.  
+  Fonte adicional: [portaldeboaspraticas.iff.fiocruz.br](https://portaldeboaspraticas.iff.fiocruz.br)
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
->
-> **Orientações**:
->
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+- **FUNDAÇÃO OSWALDO CRUZ (FIOCRUZ).** *Dez Passos para uma Alimentação Saudável: Guia Alimentar para Crianças Menores de Dois Anos*. Rio de Janeiro: Fiocruz, 2010.  
+  Disponível em: [https://portaldeboaspraticas.iff.fiocruz.br/biblioteca/dez-passos-para-uma-alimentacao-saudavel-guia-alimentar-para-criancas-menores-de-dois/](https://portaldeboaspraticas.iff.fiocruz.br/biblioteca/dez-passos-para-uma-alimentacao-saudavel-guia-alimentar-para-criancas-menores-de-dois/). Acesso em: 29 jun. 2025.  
+
+- **ORGANIZAÇÃO PAN-AMERICANA DA SAÚDE (OPAS/OMS).** *Guia Alimentar para Crianças Menores de Dois Anos: Um guia para profissionais de saúde na atenção básica*. 2019.  
+  Disponível em: [https://portaldeboaspraticas.iff.fiocruz.br/atencao-crianca/alimentacao-nos-primeiros-anos-de-vida-e-prevencao-da-obesidade/](https://portaldeboaspraticas.iff.fiocruz.br/atencao-crianca/alimentacao-nos-primeiros-anos-de-vida-e-prevencao-da-obesidade/). Acesso em: 29 jun. 2025.  
+  Fonte adicional: [portaldeboaspraticas.iff.fiocruz.br](https://portaldeboaspraticas.iff.fiocruz.br)
