@@ -294,7 +294,7 @@ O site foi estruturado de forma intuitiva, com foco na experiência do usuário 
 
 ## Vídeo do Projeto
 
-O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução. ⚠️ EXEMPLO ⚠️
+O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução. 
 
 [![Vídeo do projeto](images/video.png)](https://youtu.be/2fgEFilhvKo)
 
