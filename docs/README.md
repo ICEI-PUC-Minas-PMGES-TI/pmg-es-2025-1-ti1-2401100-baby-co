@@ -314,7 +314,8 @@ Permite a inclusão, leitura, alteração e exclusão de bebês para o sistema
   * Em seguida, informe os dados do bebe a ser cadastrado.
 * **Tela da funcionalidade**:
 
-![Tela de Funcionalidade](![cadbebe](images/cadbebe.jpg)
+![cadbebe](https://github.com/user-attachments/assets/8a381577-53ca-4238-9074-70eea159a030)
+
 
 ##### Funcionalidade 2 - Listagem de bebês
 
@@ -328,7 +329,8 @@ Permite a listagem de bebês cadastrados.
   *Clique em "Ver bebês cadastrados"
 * **Tela da funcionalidade**:
 
-![Tela de Funcionalidade](images/lembretes.jpg)
+![listagembebe](https://github.com/user-attachments/assets/65fd019c-8543-4d12-9508-c0777fa9fb32)
+
 
 
 ##### Funcionalidade 3 - Checklist
@@ -340,7 +342,7 @@ Permite a inclusão, leitura, alteração e exclusão de lembretes.
   * Acesse o menu principal e escolha a opção lembretes
 * **Tela da funcionalidade**:
 
-![Tela de Funcionalidade](images/lembretes.jpg)
+![lembretes](https://github.com/user-attachments/assets/4b1d195c-cc23-42b7-90e8-5566732c2fb9)
 
 
 ##### Funcionalidade 4 - Tela de graficos
@@ -355,7 +357,8 @@ Permite conferir a análise corporativa com base nas medidas do bebê.
 
 * **Tela da funcionalidade**:
 
-![Tela de Funcionalidade](images/graficos.jpg)
+![graficos](https://github.com/user-attachments/assets/47150795-5ee9-41d9-ad62-d747c4857906)
+
 
 
 ##### Funcionalidade 5 - Tela de blog
@@ -369,7 +372,8 @@ Espaço dedicado a artigos, dicas e conteúdos voltados à maternidade, paternid
 
 * **Tela da funcionalidade**:
 
-![Tela de Funcionalidade](images/graficos.jpg)
+![blogs](https://github.com/user-attachments/assets/9b7f5bbc-f6a2-484a-8fd4-6d47bf1116d4)
+
 
 
 
