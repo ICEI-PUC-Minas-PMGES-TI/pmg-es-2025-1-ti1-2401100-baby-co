@@ -1,3 +1,9 @@
+![listagembebe](https://github.com/user-attachments/assets/12c2fce6-c052-44a2-85f3-75b08ee1c5a2)
+![lembretes](https://github.com/user-attachments/assets/4f0bd8a0-1fe6-43af-9e05-f989d4225310)
+![graficos](https://github.com/user-attachments/assets/550afb5f-eb56-4ddf-8594-a25603159e94)
+![cadbebe](https://github.com/user-attachments/assets/625cb210-332a-47a6-9505-c6e076e710f4)
+![blogs](https://github.com/user-attachments/assets/f5021344-1160-45f7-902b-cb5b764c74ca)
+
 # Introdução
 
 Informações básicas do projeto.
