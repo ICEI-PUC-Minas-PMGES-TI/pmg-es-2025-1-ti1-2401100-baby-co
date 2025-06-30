@@ -313,7 +313,7 @@ Permite a inclusão, leitura, alteração e exclusão de bebês para o sistema
   * Em seguida, informe os dados do bebe a ser cadastrado.
 * **Tela da funcionalidade**:
 
-![Tela de Funcionalidade](images/cadbebe.jpg)
+![Tela de Funcionalidade](![cadbebe](https://github.com/user-attachments/assets/111c10e6-23a7-4386-adca-88c0b76dce51))
 
 ##### Funcionalidade 2 - Listagem de bebês
 
