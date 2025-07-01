@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bannerTitle.textContent = data.banner.titulo;
     const btn = document.getElementById('banner-button');
     btn.textContent = data.banner.botaoTexto;
-    document.getElementById('banner-img').src = `../public/assets/images/${data.banner.imagem}`;
+    document.getElementById('banner-img').src = `/assets/images/${data.banner.imagem}`;
     btn.addEventListener('click', () => {
       const servSection = document.querySelector('.services');
       if (servSection) servSection.scrollIntoView({ behavior: 'smooth' });
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         deps.forEach(dep => {
           const div = document.createElement('div');
           div.classList.add('testimonial');
-          div.innerHTML = `<p>"${dep.texto}"</p><img src="../public/assets/images/${dep.imagem}" alt="Usuário">`;
+          div.innerHTML = `<p>"${dep.texto}"</p><img src="/assets/images/${dep.imagem}" alt="Usuário">`;
           testContainer.appendChild(div);
         });
       });
