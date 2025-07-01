@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
           acMenu: 'Lembretes',
           link: 'reminders.html'
         }, {
-          acMenu: 'Login',
-          link: 'login.html'
-        }, {
           acMenu: 'Feed',
           link: 'feed.html'
         }
