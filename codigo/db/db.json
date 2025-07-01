@@ -280,22 +280,22 @@
     {
       "id": "60c4",
       "texto": "O Baby Connect mudou minha vida como mãe de primeira viagem. Consigo registrar todas as atividades do meu bebê e ainda compartilhar com meu marido e a babá.",
-      "imagem": "usuario1.png"
+      "imagem": "/assets/images/usuario1.png"
     },
     {
       "id": "a980",
       "texto": "Como mãe solo, este app me ajuda a manter a sanidade. Acompanho horários de sono, alimentação e planejo melhor meu dia com meu bebê.",
-      "imagem": "usuario2.png"
+      "imagem": "/assets/images/usuario2.png"
     },
     {
       "id": "06a0",
       "texto": "Testando",
-      "imagem": "usuario1.png"
+      "imagem": "/assets/images/usuario1.png"
     },
     {
       "id": "5bf4",
       "texto": "Salvando e testando",
-      "imagem": "usuario1.png"
+      "imagem": "/assets/images/usuario1.png"
     }
   ],
   "comments": [

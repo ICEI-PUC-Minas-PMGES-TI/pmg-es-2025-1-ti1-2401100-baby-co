@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       botaoTexto: 'Saiba Mais',
       imagem: 'banner.png'
     },
-    galeria: ['../public/assets/images/familia_praia.png', '../public/assets/images/crianca_brincando.png', '../public/assets/images/familia_em_casa.png', '../public/assets/images/cidade_passeio.png']
+    galeria: ['/assets/images/familia_praia.png', '/assets/images/crianca_brincando.png', '/assets/images/familia_em_casa.png', '/assets/images/cidade_passeio.png']
   };
 
   // Menu
