@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     deps.forEach(dep => {
       const div = document.createElement('div');
       div.classList.add('testimonial');
-      div.innerHTML = `<p>"${dep.texto}"</p><img src="../public/assets/images/${dep.imagem}" alt="Usuário">`;
+      div.innerHTML = `<p>"${dep.texto}"</p><img src="/assets/images/${dep.imagem}" alt="Usuário">`;
       list.appendChild(div);
     });
   }
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     await fetch('http://localhost:3000/depoimentos', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({ texto, imagem: 'usuario1.png' })
+      body: JSON.stringify({ texto, imagem: '/assets/images/usuario1.png' })
     });
     form.reset();
     loadTestimonies();
