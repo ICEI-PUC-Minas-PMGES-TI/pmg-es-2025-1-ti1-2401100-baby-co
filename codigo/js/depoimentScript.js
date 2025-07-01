@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, {
           acMenu: 'Login',
           link: 'login.html'
+        }, {
+          acMenu: 'Feed',
+          link: 'feed.html'
         }
       ],
     banner: {

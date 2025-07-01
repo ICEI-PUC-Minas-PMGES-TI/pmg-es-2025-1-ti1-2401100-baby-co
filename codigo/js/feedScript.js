@@ -14,6 +14,31 @@ function getOrCreateUserId() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const data = {
+    logo: 'logo.jpg',
+    menu:
+      [
+        {
+          acMenu: 'Depoimentos',
+          link: 'depoimentos.html'
+        }, {
+          acMenu: 'Serviços',
+          link: 'servicos.html'
+        }
+      ]
+    };
+  const menuList = document.getElementById('menu-list');
+  if (menuList) {
+    menuList.innerHTML = '';
+    data.menu.forEach(item => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.textContent = item.acMenu;
+      a.href = item.link;
+      li.appendChild(a);
+      menuList.appendChild(li);
+    });
+  }
   loadFeed();
 });
 
