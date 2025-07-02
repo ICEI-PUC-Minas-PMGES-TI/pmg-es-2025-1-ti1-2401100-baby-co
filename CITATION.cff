@@ -4,30 +4,42 @@ version: 1.0.0
 date-released: 2022-07-14
 license: CC-BY-4.0
 
+abstract: >
+  Baby Connect é uma aplicação web desenvolvida por alunos da PUC Minas com o objetivo de facilitar
+  a organização de tarefas e rotinas, especialmente voltadas para cuidados com bebês e crianças pequenas.
+  O sistema permite criar checklists, registrar atividades e acompanhar o dia a dia de maneira prática.
+  O projeto foi realizado como parte das atividades acadêmicas da disciplina de Engenharia de Software.
+
 authors:
-  - family-names: Ribas
-    given-names: Mateus
+  - family-names: Marques
+    given-names: Mateus Marçal Ribas
     affiliation: PUC Minas
-  - family-names: Fortini
-    given-names: André
+  - family-names: Mello
+    given-names: André Fortinide
     affiliation: PUC Minas
-  - family-names: Felipe
-    given-names: Gabriel
+  - family-names: Sousa
+    given-names: Gabriel Felipe Santos de
     affiliation: PUC Minas
-  - family-names: Alberto
-    given-names: Ruan
+  - family-names: Silva
+    given-names: Ruan Alberto
     affiliation: PUC Minas
-  - family-names: D'assunçao
-    given-names: Davi
+  - family-names: Coelho
+    given-names: Davi De Assunção
     affiliation: PUC Minas
-  - family-names: Fernandes
-    given-names: Vinicius
+  - family-names: Mantini
+    given-names: Vinicius Fernandes
     affiliation: PUC Minas
-  - family-names: Horta
-    given-names: Guilherme Diego Augusto
+  - family-names: Dias
+    given-names: Guilherme Horta
     affiliation: PUC Minas
-  - family-names: Esteves
-    given-names: Marcelo Michele Hanne
+  - family-names: Bernardi
+    given-names: Marcelo Esteves
+    affiliation: PUC Minas
+  - family-names: Barros
+    given-names: Diego Augusto de Faria
+    affiliation: PUC Minas
+  - family-names: Andrade
+    given-names: Michelle Hanne Soares de
     affiliation: PUC Minas
 
 keywords:
