@@ -6,6 +6,8 @@ Informações básicas do projeto.
  Baby Connect
 https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti1-2401100-baby-co.git
 
+https://pmg-es-2025-1-ti1-2401100-baby-co.onrender.com/html/index.html
+
 
 Mateus Marçal Ribas Marques
 Gabriel Felipe Santos de Sousa
