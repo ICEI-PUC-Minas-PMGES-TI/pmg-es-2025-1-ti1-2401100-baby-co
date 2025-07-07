@@ -12,32 +12,27 @@ abstract: >
 authors:
   - family-names: Marques
     given-names: Mateus Marçal Ribas
-    affiliation: PUC Minas
   - family-names: Mello
     given-names: André Fortinide
-    affiliation: PUC Minas
   - family-names: Sousa
     given-names: Gabriel Felipe Santos de
-    affiliation: PUC Minas
   - family-names: Silva
     given-names: Ruan Alberto
-    affiliation: PUC Minas
   - family-names: Coelho
     given-names: Davi De Assunção
-    affiliation: PUC Minas
   - family-names: Mantini
     given-names: Vinicius Fernandes
-    affiliation: PUC Minas
   - family-names: Dias
     given-names: Guilherme Horta
-    affiliation: PUC Minas
   - family-names: Bernardi
     given-names: Marcelo Esteves
+  - name-suffix: Professor
     affiliation: PUC Minas
-  - family-names: Barros
+    family-names: Barros
     given-names: Diego Augusto de Faria
+  - name-suffix: Professor
     affiliation: PUC Minas
-  - family-names: Andrade
+    family-names: Andrade
     given-names: Michelle Hanne Soares de
     affiliation: PUC Minas
 keywords:
